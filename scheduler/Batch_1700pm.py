@@ -92,7 +92,7 @@ for key, value in daily_dict.items():
         wordpress.Trifindr.create_news_post(value)
 
     if str(key).startswith("Twitter") and str(value) != "    " and twitter_flag:
-        #twitter.tweet.tweetSomething(value)
+        twitter.tweet.tweetSomething(value)
         tw_tweet = value
         print("Tweeting ::: " + value)
 
@@ -148,13 +148,13 @@ print(f"finished batch for {formatted_date}")
 
 if send_email:
     yahoo.send_quick_message('Notion Batch has run :' + tw_tweet,
-                                "ai_flag [" + str(ai_flag) + "]" +
-                                "amzn_flag [" + str(amzn_flag) + "]" +
-                                "blog_flag [" + str(blog_flag) + "]" +
-                                "medium_flag [" + str(medium_flag) + "]" +
-                                "triathlon_flag [" + str(triathlon_flag) + "]" +
-                                "twitter_flag" + str(twitter_flag) + "]" +
-                                "youtube_flag [" + str(youtube_flag) + "]" +
-                                "youtube_download_flag [" + str(youtube_download_flag) + "]" +
+                                "ai_flag [" + str(ai_flag) + "] " +
+                                "amzn_flag [" + str(amzn_flag) + "] " +
+                                "blog_flag [" + str(blog_flag) + "] " +
+                                "medium_flag [" + str(medium_flag) + "] " +
+                                "triathlon_flag [" + str(triathlon_flag) + "] " +
+                                "twitter_flag" + str(twitter_flag) + "] " +
+                                "youtube_flag [" + str(youtube_flag) + "] " +
+                                "youtube_download_flag [" + str(youtube_download_flag) + "] " +
                                 "send_email [" + str(send_email)
                              )

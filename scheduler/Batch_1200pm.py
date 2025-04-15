@@ -3,7 +3,7 @@ import notion.get_post as notn
 import notion.search as notnsearch
 
 from datetime import date
-
+import emailxx.yahoo_quick_email as yahoo
 
 def do_it():
 
@@ -25,3 +25,5 @@ def do_it():
 
         if str(key).startswith("Twitter") and str(value) != "":
             print("We will be tweeting... ")
+
+    yahoo.send_quick_message('ContentAI is Live!', 'Hello World')
