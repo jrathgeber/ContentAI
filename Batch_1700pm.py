@@ -50,11 +50,11 @@ tw_tweet = "nothing"
 # Flags for running it. Makes easier to test.
 ai_flag = True
 amzn_flag = True
-blog_flag = False
+blog_flag = True
 code_flag = True
-medium_flag = False
+medium_flag = True
 triathlon_flag = True
-twitter_flag = False
+twitter_flag = True
 youtube_flag = False
 youtube_download_flag = True
 send_email = True

@@ -4,7 +4,6 @@ import schedule
 
 import Batch_1200pm
 
-
 def midday_motivation():
 
     current_time = datetime.datetime.now().strftime("%H:%M:%S")
@@ -19,7 +18,6 @@ def print_current_time():
     print(f"Current time: {current_time}")
 
     Batch_1200pm.do_it()
-
 
 # Schedule the tasks
 schedule.every().day.at("09:30").do(print_current_time)
