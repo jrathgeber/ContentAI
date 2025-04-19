@@ -5,7 +5,7 @@
 
 <img src="zTemp/ContentAI.jpg" width="30%" style="position: relative; top: 0; right: 0;" alt="Project Logo"/>
 
-# CONTENTAI
+# ContentAI
 
 <em></em>
 
@@ -837,9 +837,9 @@ pytest
 
 ## Roadmap
 
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
+- [X] **`Task 1`**: <strike>Build Initial backned in python</strike>
+- [X] **`Task 2`**: <strike>Conect to Notion as the GUI</strike>
+- [ ] **`Task 3`**: Dedicated Front End hosted on Vercel
 
 ---
 
