@@ -12,7 +12,7 @@
 <!-- BADGES -->
 <!-- local repository, no metadata badges. -->
 
-<em>Built with the tools and technologies:</em>
+<em>Built with love in :</em>
 
 <img src="https://img.shields.io/badge/Python-3776AB.svg?style=default&logo=Python&logoColor=white" alt="Python">
 
@@ -47,16 +47,16 @@ In today's fast-paced digital world, managing multiple social media accounts can
 ### Why ContentAI?
 ContentAI offers a comprehensive suite of tools that automate the scheduling, posting, and analysis of your social media content. Whether you're a small business owner juggling different platforms or a seasoned influencer looking to optimize engagement, ContentAI provides an intuitive user interface backed by powerful AI algorithms. Its mission is simple: empower content creators by streamlining workflows, so they can focus more on creativity and less on repetitive administrative tasks.
 
-Efficiency at No Cost
+### Efficiency at No Cost
 One of the greatest advantages of ContentAI is that it's completely free. This means businesses and creators of any size can leverage cutting-edge technology without worrying about expensive subscriptions. With automated posting schedules, analytics dashboards, and content optimization tips at your fingertips, you can ensure your brand remains consistent and engaging across all channels.
 
-Automation Meets Creativity
+### Automation Meets Creativity
 While automation might evoke thoughts of inauthentic content, ContentAI strikes the right balance by freeing up time for creativity. Once the groundwork is automated, you have more time to craft personalized messages, interact with your audience, and refine your overall content strategy. This blend of efficiency and customization ultimately paves the way for a more dynamic social media presence, one that resonates with your followers and drives growth.
 
-Adaptability in a Changing Landscape
+### Adaptability in a Changing Landscape
 Social media trends change rapidly, but with ContentAI's adaptive algorithms, you can stay ahead of the curve. The platform continuously learns from your past posts and audience interactions to suggest the best times to post, the most engaging content formats, and even trending topics relevant to your industry. It's like having a full-time digital strategist working alongside you - without any extra cost.
 
-Final Thoughts
+### Final Points
 ContentAI is more than just a tool; it's a partner in your digital journey. By automating routine tasks and providing data-driven insights, it empowers you to focus on what really matters: building genuine connections and telling your brand's story. So, if you're ready to revolutionize your social media strategy without spending a dime, embrace ContentAI - your free social media automation platform - and watch your online presence flourish.
 
 ---
@@ -82,7 +82,6 @@ ContentAI is more than just a tool; it's a partner in your digital journey. By a
 ```sh
 └── ContentAI/
     ├── ai
-    │   ├── __pycache__
     │   ├── Claude.py
     │   ├── ClaudeCode.py
     │   ├── ClaudeFile.py
@@ -97,7 +96,6 @@ ContentAI is more than just a tool; it's a partner in your digital journey. By a
     │   ├── Perplexity.py
     │   └── Xai.py
     ├── blog
-    │   ├── __pycache__
     │   ├── BlogArticle.py
     │   ├── BlogArticleStyle.py
     │   ├── BlogImage.py
@@ -110,7 +108,6 @@ ContentAI is more than just a tool; it's a partner in your digital journey. By a
     │   ├── example.py
     │   └── upload_product.py
     ├── emailxx
-    │   ├── __pycache__
     │   ├── beehiive-post-script.py
     │   ├── mailchimp-campaign-creator.py
     │   ├── yahoo_quick_email.py
@@ -122,7 +119,6 @@ ContentAI is more than just a tool; it's a partner in your digital journey. By a
     ├── linkedin
     │   └── linkedin-post-script.py
     ├── mediun
-    │   ├── __pycache__
     │   ├── create_article.py
     │   ├── get_article.py
     │   ├── user_details.py
@@ -134,7 +130,6 @@ ContentAI is more than just a tool; it's a partner in your digital journey. By a
     │   ├── search.py
     │   └── upload_data.py
     ├── prompts
-    │   ├── __pycache__
     │   ├── aBlog.py
     │   ├── aGainers.py
     │   ├── aMedium.py
@@ -150,8 +145,6 @@ ContentAI is more than just a tool; it's a partner in your digital journey. By a
     │   ├── perp.py
     │   ├── Tech_Notion.py
     │   └── Transcript_Fix.py
-    ├── README.md
-    ├── requirements.txt
     ├── rss
     │   └── Triathlon.py
     ├── scheduler
@@ -164,12 +157,10 @@ ContentAI is more than just a tool; it's a partner in your digital journey. By a
     │   ├── Batch_Sun_Fin.py
     │   └── blog.html
     ├── twitter
-    │   ├── __pycache__
     │   ├── listen.py
     │   ├── tweet.py
     │   └── weather.py
     ├── web
-    │   ├── __pycache__
     │   ├── amzn.py
     │   ├── amzn2.py
     │   ├── amzn3.py
@@ -179,11 +170,9 @@ ContentAI is more than just a tool; it's a partner in your digital journey. By a
     │   ├── get_rockbros_product.py
     │   └── get_selenium.py
     ├── wordpress
-    │   ├── __pycache__
     │   ├── Trifindr.py
     │   └── WordPressUpload.py
     ├── youtubevids
-    │   ├── __pycache__
     │   ├── download_transcript.py
     │   ├── edit_video.py
     │   ├── Roboto-Light.ttf
@@ -191,6 +180,8 @@ ContentAI is more than just a tool; it's a partner in your digital journey. By a
     │   ├── upload_video.py
     │   └── upload_video_manual.py
     └── zTemp
+    ├── requirements.txt
+    ├── README.md
 ```
 
 ### Project Index
