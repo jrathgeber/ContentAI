@@ -1,6 +1,7 @@
 import requests
 import json
 
+
 def post_to_linkedin(access_token, person_urn, message):
     """
     Function to post a message to LinkedIn

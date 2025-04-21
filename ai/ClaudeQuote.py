@@ -1,6 +1,4 @@
-import os
 import anthropic
-import argparse
 from pathlib import Path
 
 import configparser

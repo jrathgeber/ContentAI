@@ -56,14 +56,14 @@ def save_article(article, topic):
     
     return filename
 
+
 def main():
     # Set up argument parser
     parser = argparse.ArgumentParser(description="Generate an article using Claude API")
     parser.add_argument("topic", help="The topic for the article")
     parser.add_argument("--length", choices=["short", "medium", "long"], 
                         default="medium", help="Length of the article")
-    parser.add_argument("--save", action="store_true", 
-                        help="Save the article to a file")
+    parser.add_argument("--save", action="store_true", help="Save the article to a file")
 
     args = parser.parse_args()
 
@@ -86,6 +86,7 @@ def main():
 
     except Exception as e:
         print(f"Error: {str(e)}")
+
 
 if __name__ == "__main__":
     main()

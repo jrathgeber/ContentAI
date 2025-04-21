@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-
-"""
-Created on Sum Jan 22 2025
-@author: Jason R
-"""
-
 import openai
 from openai import OpenAI
 import configparser

@@ -7,7 +7,7 @@ import configparser
 config = configparser.ConfigParser()
 config.read('C:\\etc\\properties.ini')
 
-api_key=config['claude']['api_key']
+api_key = config['claude']['api_key']
 
 
 def read_file(file_path):

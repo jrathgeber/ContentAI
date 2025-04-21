@@ -1,16 +1,15 @@
-import time
 import ftplib
 import configparser
-from shutil import copyfile
 
 config = configparser.ConfigParser()
-config.read('C:\etc\properties.ini')
+config.read('C:\\etc\\properties.ini')
 
 gdurl = config['godaddy']['godaddy.url']
 gduser = config['godaddy']['godaddy.user']
 gdpass = config['godaddy']['godaddy.pass']
 
 session = ftplib.FTP(gdurl, gduser, gdpass)
+
 
 def publish_blog(from_file, blog_type):
 

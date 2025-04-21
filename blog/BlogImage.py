@@ -45,16 +45,14 @@ if __name__ == "__main__":
 
     '''
     create_thumbnail("C:\\dev\\godaddy\\vcard\\assets\\custom\\images\\blog\\043_how_to_download_a_youtube_video_transcript_with_python.jpg",
-    "C:\\dev\\godaddy\\vcard\\assets\custom\\images\\blog\\thumbs\\043_how_to_download_a_youtube_video_transcript_with_python.jpg")
+    "C:\\dev\\godaddy\\vcard\\assets\\custom\\images\\blog\\thumbs\\043_how_to_download_a_youtube_video_transcript_with_python.jpg")
 
     if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
 
     '''
     directory = "C:\\dev\\godaddy\\vcard\\assets\\custom\\images\\blog\\"
 
-    dir_out = "C:\\dev\\godaddy\\vcard\\assets\custom\\images\\blog\\thumbs\\v2\\"
-
-
+    dir_out = "C:\\dev\\godaddy\\vcard\\assets\\custom\\images\\blog\\thumbs\\v2\\"
 
     for filename in os.listdir(directory):
         if filename.lower().endswith(('.jpg')):
