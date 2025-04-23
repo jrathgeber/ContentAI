@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import time
 from shutil import copyfile
 
@@ -15,7 +13,7 @@ def copywrite(copy, article_number, slug, key_words, todaydate):
 def replace_stype(blog_path, article_number, slug, key_words, today_date):
 
     f = open(blog_path + "\\articles\\article_" + article_number + '_' + slug + ".html", "r")
-    copy = open("article.html", "w")
+    copy = open("\\zTemp\\blog\\article.html", "w")
 
     for line in f:
 
@@ -29,7 +27,7 @@ def replace_stype(blog_path, article_number, slug, key_words, today_date):
     f.close()
     copy.close()
 
-    copyfile('article.html', blog_path + '\\articles\\article_' + article_number + '_' + slug + '.html')
+    copyfile('\\zTemp\\blog\\article.html', blog_path + '\\articles\\article_' + article_number + '_' + slug + '.html')
 
     # Give it some time
     time.sleep(3)
