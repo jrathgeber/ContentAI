@@ -3,6 +3,7 @@ import configparser
 
 
 def generate_article(model_name, prompt):
+
     """
     Generates an article using the Gemini API.
 
