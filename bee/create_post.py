@@ -44,7 +44,7 @@ def create_post(title, content, subtitle=None, slug=None, thumbnail_url=None,
     # Build post data
     post_data = {
         # Remove publication_id from request body
-        # "publication_id": PUBLICATION_ID,
+        "publication_id": PUBLICATION_ID,
         "title": title,
         "content": content,
         "status": status,
