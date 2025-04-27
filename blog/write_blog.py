@@ -54,5 +54,5 @@ def write(title):
 
 #    BlogIndex.update_config_index(int(blog_index)+1)
 
-    Gd.publish_blog(file_path, "Article")
+    Gd.publish_blog(file_path, article_number, slug, "Article")
 
