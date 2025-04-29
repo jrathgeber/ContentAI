@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
+
 def get_product(target_url):
 
     l=[]
@@ -17,7 +18,7 @@ def get_product(target_url):
         print(resp)
     soup=BeautifulSoup(resp.text,'html.parser')
 
-    #print(soup)
+    print(soup)
 
     try:
         o["title"]=soup.find('h1',{'id':'title'}).text.lstrip().rstrip()
@@ -66,4 +67,4 @@ def get_product(target_url):
 
 if __name__ == "__main__":
 
-    df = get_product("https://amzn.to/4hMSZxf")
+    df = get_product("https://rockbrosbike.us/products/rockbros-cycling-glassesmtb-biking-sports-sunglasses-with-anti-blue-lenses-men")

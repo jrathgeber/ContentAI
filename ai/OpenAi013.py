@@ -5,6 +5,7 @@ import configparser
 config = configparser.ConfigParser()
 config.read('C:\\etc\\properties.ini')
 
+
 def write_article(key_words, further_info):
 
     # Get Reference to Properties

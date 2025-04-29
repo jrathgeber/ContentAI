@@ -6,6 +6,7 @@ import notion.search as notnsearch
 import notion.get_post as notn
 import twitter.tweet
 import web.get_amazon_product
+import web.get_rockbros_product_gemini
 import wordpress.Trifindr
 import youtubevids.upload_video
 import youtubevids.download_transcript
@@ -83,6 +84,14 @@ for key, value in daily_dict.items():
         name = o["title"].split(",", 1)[0].split("|", 1)[0].split("-", 1)[0]
         url = str(value)
         wordpress.Trifindr.create_product(url, name, str(o["title"]), o["price"], o["images"])
+
+    if str(key).startswith("Rock") and str(value) != "    " and amzn_flag:
+        print("[" + str(value) + "]")
+        o = web.get_get_rockbros_product_gemini.get_rock_product(value)
+        name = o["title"].split(",", 1)[0].split("|", 1)[0].split("-", 1)[0]
+        url = str(value)
+        wordpress.Trifindr.create_product(url, name, str(o["title"]), o["price"], o["images"])
+
 
     if str(key).startswith("Blog") and str(value) != "    " and blog_flag:
         blog.write_blog.write(value.lstrip())
