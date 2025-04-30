@@ -15,7 +15,7 @@ def fetch_it(video_id):
     transcript = ytt_api.fetch(video_id)
 
     transcript_text = ""
-    transcript_path = code_path
+    transcript_path = code_path + "transcript\\"
     transcript_name = video_id
 
     file_to_download = transcript_path + "youtube_transcript_" + transcript_name + ".txt"

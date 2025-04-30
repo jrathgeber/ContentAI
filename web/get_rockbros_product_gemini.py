@@ -2,11 +2,13 @@ import requests
 from bs4 import BeautifulSoup
 import os
 from urllib.parse import urljoin, urlparse
-import re # For cleaning filenames
+import re # For regex and cleaning filenames
+import json # To potentially parse JSON-like data if regex gets complex
 
 def scrape_product_page(url, num_images_to_download=3):
     """
-    Scrapes product info (item, price, description) and downloads images from a URL.
+    Scrapes product info (item, price, description) and downloads images from a URL,
+    prioritizing data within a specific JavaScript variable if standard HTML fails.
 
     Args:
         url (str): The URL of the product page.
@@ -18,95 +20,124 @@ def scrape_product_page(url, num_images_to_download=3):
               or None if scraping fails.
     """
     headers = {
-        # Mimic a browser to avoid potential blocking
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     }
-    scraped_data = {}
+    scraped_data = {
+        'title': 'Title not found',
+        'price': 'Price not found',
+        'description': 'Description not found',
+        'downloaded_images': []
+    } # Initialize with defaults
     downloaded_image_paths = []
 
     try:
         print(f"Attempting to fetch URL: {url}")
         response = requests.get(url, headers=headers, timeout=15)
-        response.raise_for_status() # Raise HTTPError for bad responses (4xx or 5xx)
+        response.raise_for_status()
         print("URL fetched successfully.")
 
         soup = BeautifulSoup(response.content, 'html.parser')
 
-        print(soup)
+        #print(soup)
 
-        # --- 1. Extract Item Name (Title) ---
-        # Inspecting the page, the title is in an <h1> with class 'product__title'
-        title_tag = soup.find('h1', class_='product__title')
-        scraped_data['title'] = title_tag.get_text(strip=True) if title_tag else "Title not found"
+        # --- Attempt 1: Extract Name and Price from JavaScript ---
+        found_in_script = False
+        #script_tags = soup.find_all('script', type='text/javascript')
+        script_tags = soup.find_all('script')
+        print(f"Found {len(script_tags)} script tags. Searching for 'gsf_conversion_data'...")
 
-        # --- 2. Extract Price ---
-        # Price seems to be in a <span> with class 'price-item--regular' inside a div with class 'price'
-        # It might also be 'price-item--sale' if on sale
-        price_container = soup.find('div', class_='price')
-        if price_container:
-            price_tag = price_container.find('span', class_='price-item--regular')
-            if not price_tag: # Check for sale price if regular wasn't found
-                price_tag = price_container.find('span', class_='price-item--sale')
-            scraped_data['price'] = price_tag.get_text(strip=True) if price_tag else "Price not found"
-        else:
-             scraped_data['price'] = "Price container not found"
+        for script in script_tags:
+            script_content = script.string # Get the text content of the script tag
 
-        # --- 3. Extract Description ---
-        # The main description is often in a div with class 'product__description' or 'rte'
+            #print(script_content)
+
+            if script_content and 'gsf_conversion_data' in script_content:
+                print("Found script containing 'gsf_conversion_data'. Extracting data...")
+
+                # Regex to find the name within the product_data structure
+                # Looks for: name : "VALUE", handling potential whitespace
+                name_match = re.search(r'name\s*:\s*"(.*?)"', script_content)
+                if name_match:
+                    scraped_data['title'] = name_match.group(1).strip()
+                    print(f"  Extracted Title: {scraped_data['title']}")
+                    found_in_script = True # Mark that we found at least part of the data
+
+                # Regex to find the price within the product_data structure
+                # Looks for: price : "VALUE", handling potential whitespace
+                price_match = re.search(r'price\s*:\s*"(.*?)"', script_content)
+                if price_match:
+                    scraped_data['price'] = f"${price_match.group(1).strip()}" # Add currency symbol for clarity
+                    print(f"  Extracted Price: {scraped_data['price']}")
+                    found_in_script = True # Mark that we found at least part of the data
+
+                # If we found both in this script, no need to check others
+                if scraped_data['title'] != 'Title not found' and scraped_data['price'] != 'Price not found':
+                     break # Exit the loop once data is found
+
+        if not found_in_script:
+            print("Could not find 'gsf_conversion_data' or extract data from scripts.")
+            # --- Fallback Attempt: Extract Item Name (Title) from H1 (Original Method) ---
+            title_tag = soup.find('h1', class_='product__title')
+            if title_tag:
+                scraped_data['title'] = title_tag.get_text(strip=True)
+                print(f"  Fallback: Found Title in H1 tag: {scraped_data['title']}")
+
+            # --- Fallback Attempt: Extract Price from Span (Original Method) ---
+            price_container = soup.find('div', class_='price')
+            if price_container:
+                price_tag = price_container.find('span', class_='price-item') # More general class
+                if price_tag:
+                     scraped_data['price'] = price_tag.get_text(strip=True)
+                     print(f"  Fallback: Found Price in span tag: {scraped_data['price']}")
+
+
+        # --- 3. Extract Description (Keep original method) ---
         description_tag = soup.find('div', class_='product__description')
         if description_tag:
-             # Using separator='\n' preserves line breaks better than just get_text()
              scraped_data['description'] = description_tag.get_text(separator='\n', strip=True)
         else:
-            # Fallback if the primary class isn't found
-            desc_fallback = soup.find('div', class_='rte') # 'rte' is common for rich text editor content
-            scraped_data['description'] = desc_fallback.get_text(separator='\n', strip=True) if desc_fallback else "Description not found"
+            desc_fallback = soup.find('div', class_='rte')
+            scraped_data['description'] = desc_fallback.get_text(separator='\n', strip=True) if desc_fallback else scraped_data['description'] # Keep default if not found
+
+        if scraped_data['description'] != 'Description not found':
+            print("Found description.")
+        else:
+            print("Description tag not found.")
 
 
-        # --- 4. Find Image URLs ---
+        # --- 4. Find Image URLs (Keep original method) ---
         image_urls = []
-        # Target images within the main product media area for relevance
-        # Often in a list or gallery container like 'product__media-list'
         media_gallery = soup.find('div', class_='product__media-list')
+        img_tags = []
         if media_gallery:
             img_tags = media_gallery.find_all('img')
+            print(f"Found {len(img_tags)} image tags in media gallery.")
         else:
-             # Broader search if specific container not found (might get unrelated images)
              print("Warning: Specific media gallery container not found, searching all img tags.")
              img_tags = soup.find_all('img')
 
-        print(f"Found {len(img_tags)} potential image tags.")
 
         for img in img_tags:
-            # Prioritize 'src', fallback to 'data-src' (used for lazy loading)
             src = img.get('src') or img.get('data-src')
             if src:
-                # Clean '//' prefix sometimes found in src attributes
                 if src.startswith('//'):
                     src = 'https:' + src
-
-                # Convert relative URLs (like /path/image.jpg) to absolute URLs
                 absolute_url = urljoin(url, src)
-
-                # Basic filtering: ensure it's HTTP/HTTPS and likely an image format
                 parsed_img_url = urlparse(absolute_url)
                 if (parsed_img_url.scheme in ['http', 'https'] and
                     any(absolute_url.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif']) and
-                    absolute_url not in image_urls): # Avoid duplicates
+                    absolute_url not in image_urls):
                      image_urls.append(absolute_url)
-                     # print(f"  Found potential image: {absolute_url}")
-
 
         print(f"Found {len(image_urls)} unique, valid image URLs.")
 
-        # --- 5. Download Images ---
+        # --- 5. Download Images (Keep original method) ---
         if not image_urls:
             print("No suitable image URLs found to download.")
-            scraped_data['downloaded_images'] = []
+            # scraped_data['downloaded_images'] already initialized as []
             return scraped_data
 
-        # Create directory to save images
-        image_dir = "../zTemp/rockbros_product_images"
+        image_dir = "rockbros_product_images"
         os.makedirs(image_dir, exist_ok=True)
         print(f"Saving images to directory: '{image_dir}'")
 
@@ -118,21 +149,16 @@ def scrape_product_page(url, num_images_to_download=3):
                 img_response = requests.get(img_url, headers=headers, stream=True, timeout=10)
                 img_response.raise_for_status()
 
-                # Extract filename from URL path
                 parsed_url = urlparse(img_url)
                 img_filename = os.path.basename(parsed_url.path)
-
-                # Basic filename cleaning (remove invalid chars)
                 img_filename = re.sub(r'[\\/*?:"<>|]', "_", img_filename)
-                # Add default name if cleaning results in empty string or no extension
                 if not img_filename or '.' not in img_filename:
-                     img_filename = f"image_{count+1}.jpg" # Default name with jpg extension
+                     img_filename = f"image_{count+1}.jpg"
 
                 filepath = os.path.join(image_dir, img_filename)
 
-                # Save the image
                 with open(filepath, 'wb') as f:
-                    for chunk in img_response.iter_content(8192): # Download in chunks
+                    for chunk in img_response.iter_content(8192):
                         f.write(chunk)
 
                 downloaded_image_paths.append(filepath)
@@ -145,7 +171,6 @@ def scrape_product_page(url, num_images_to_download=3):
                 print(f"  Error saving image {img_url} to {filepath}: {e}")
             except Exception as e:
                 print(f"  An unexpected error occurred for image {img_url}: {e}")
-
 
         scraped_data['downloaded_images'] = downloaded_image_paths
         return scraped_data
@@ -160,10 +185,9 @@ def scrape_product_page(url, num_images_to_download=3):
         print(f"Error: Failed to fetch URL {url}. Error: {e}")
         return None
     except Exception as e:
-        # Catch other potential errors during parsing or file handling
         print(f"An unexpected error occurred: {e}")
         import traceback
-        traceback.print_exc() # Print detailed traceback for debugging
+        traceback.print_exc()
         return None
 
 def get_rock_product(target_url):
@@ -195,11 +219,15 @@ def get_rock_product(target_url):
 
 
     try:
-        o["price"]=17
+        o["price"]=product_info.get('price', 'N/A')
     except:
         o["price"]=None
 
 
+    images = product_info.get('downloaded_images', [])
+    o["images"] = images
+
+    return o
 
 if __name__ == "__main__":
     target_url = "https://rockbrosbike.us/products/rockbros-cycling-glassesmtb-biking-sports-sunglasses-with-anti-blue-lenses-men?ref=glgipqco"

@@ -3,6 +3,7 @@ import wordpress.WordPressUpload as wp
 import ai.OpenAi013 as ai
 import ai.OpenAi01 as news
 import ai.Dalle as dale
+from shutil import copyfile
 
 import requests
 
@@ -60,6 +61,18 @@ def create_product(url, title, description, price, images):
     image = slug + ".jpg"
 
     download_image(images[0], image)
+
+    image = wp.add_a_wordpress_image(image, slug)
+
+    wp.product_upload(url, slug, title, description, price, image)
+
+def create_product_rock(url, title, description, price, images):
+
+    slug = title.replace(" ", "_")
+
+    image = slug + ".jpg"
+
+    copyfile(images[0], image)
 
     image = wp.add_a_wordpress_image(image, slug)
 

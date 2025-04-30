@@ -87,10 +87,10 @@ for key, value in daily_dict.items():
 
     if str(key).startswith("Rock") and str(value) != "    " and amzn_flag:
         print("[" + str(value) + "]")
-        o = web.get_get_rockbros_product_gemini.get_rock_product(value)
+        o = web.get_rockbros_product_gemini.get_rock_product(value)
         name = o["title"].split(",", 1)[0].split("|", 1)[0].split("-", 1)[0]
         url = str(value)
-        wordpress.Trifindr.create_product(url, name, str(o["title"]), o["price"], o["images"])
+        wordpress.Trifindr.create_product_rock(url, name, str(o["title"]), o["price"], o["images"])
 
 
     if str(key).startswith("Blog") and str(value) != "    " and blog_flag:
