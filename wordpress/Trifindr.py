@@ -54,9 +54,9 @@ def download_image(url, file_name):
         print("Failed to retrieve the image")
 
 
-def create_product(url, title, description, price, images):
+def create_product(url, name, title, description, price, images):
 
-    slug = title.replace(" ", "_")
+    slug = name.replace(" ", "_")
 
     image = slug + ".jpg"
 
@@ -64,11 +64,12 @@ def create_product(url, title, description, price, images):
 
     image = wp.add_a_wordpress_image(image, slug)
 
-    wp.product_upload(url, slug, title, description, price, image)
+    wp.product_upload(url, slug, name, title, description, price, image, "Amazon")
 
-def create_product_rock(url, title, description, price, images):
 
-    slug = title.replace(" ", "_")
+def create_product_rock(url, name, title, price, description, images):
+
+    slug = name.replace(" ", "_")
 
     image = slug + ".jpg"
 
@@ -76,4 +77,4 @@ def create_product_rock(url, title, description, price, images):
 
     image = wp.add_a_wordpress_image(image, slug)
 
-    wp.product_upload(url, slug, title, description, price, image)
+    wp.product_upload(url, slug, name, title, description, price, image, "Rockbros")

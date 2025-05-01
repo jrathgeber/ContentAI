@@ -79,22 +79,23 @@ def add_a_wordpress_image(file_name, slug):
     return str(json.loads(response.content)["id"])
 
 
-def product_upload(ext_url, slug, title, description, price, image_id):
+def product_upload(ext_url, slug, name, title, description, price, image_id, vendor):
 
     print("URL is :: " + ext_url)
 
     # Product data
     payload = json.dumps({
-        "name": title,
-        "content": description,
+        "name": name,
         "status": "publish",
         "type": "external",
         "regular_price": price,
         "images": [{"id": image_id}],
         "external_url": ext_url,
         "slug": slug,
-        "button_text" : "Buy On Amazon",
-        "short_description" : description
+        "button_text" : "Buy On " + vendor,
+        "short_description": title,
+        "description": description,
+        "categories": [{'id': 295, 'name': 'Uncategorized', 'slug': 'uncategorized'}, {'name': 'Bike', 'slug': 'Bike'}]
     })
 
     tri_url = "https://trifindr.com/"
