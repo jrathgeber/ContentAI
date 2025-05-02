@@ -7,6 +7,7 @@ import notion.get_post as notn
 import twitter.tweet
 import web.get_amazon_product
 import web.get_rockbros_product_gemini
+import web.get_web_article
 import wordpress.Trifindr
 import youtubevids.upload_video
 import youtubevids.download_transcript
@@ -58,6 +59,7 @@ triathlon_flag = True
 twitter_flag = True
 youtube_flag = False
 youtube_download_flag = True
+web_flag = True
 send_email = True
 
 medium_set = False
@@ -72,11 +74,14 @@ for key, value in daily_dict.items():
     if str(key).startswith("AI") and str(value) != "    " and ai_flag:
         code_task = value.lstrip()
         print(value.lstrip())
-        #ai.ClaudeCode.write_code_task(code_task)
 
     if str(key).startswith("Code") and str(value) != "    " and code_flag:
         code_task = value.lstrip()
         ai.ClaudeCode.write_code_task(code_task)
+
+    if str(key).startswith("Web") and str(value) != "    " and web_flag:
+        web_article = value.lstrip()
+        web.get_web_article.download_article_text(web_article)
 
     if str(key).startswith("Amazon") and str(value) != "    " and amzn_flag:
         print("[" + str(value) + "]")
@@ -91,7 +96,6 @@ for key, value in daily_dict.items():
         name = o["title"].split(",", 1)[0].split("|", 1)[0].split("-", 1)[0]
         url = str(value)
         wordpress.Trifindr.create_product_rock(url, name, str(o["title"]), o["price"], o["description"], o["images"])
-
 
     if str(key).startswith("Blog") and str(value) != "    " and blog_flag:
         blog.write_blog.write(value.lstrip())
@@ -163,13 +167,13 @@ print(f"finished batch for {formatted_date}")
 
 if send_email:
     yahoo.send_quick_message('Notion Batch has run :' + tw_tweet,
-                                "ai_flag [" + str(ai_flag) + "] \n" +
-                                "amzn_flag [" + str(amzn_flag) + "] \n" +
-                                "blog_flag [" + str(blog_flag) + "] \n" +
-                                "medium_flag [" + str(medium_flag) + "] \n" +
-                                "triathlon_flag [" + str(triathlon_flag) + "] \n" +
-                                "twitter_flag" + str(twitter_flag) + "] \n" +
-                                "youtube_flag [" + str(youtube_flag) + "] \n" +
-                                "youtube_download_flag [" + str(youtube_download_flag) + "] \n" +
+                                "ai_flag [" + str(ai_flag) + "] \n\n" +
+                                "amzn_flag [" + str(amzn_flag) + "] \n\n" +
+                                "blog_flag [" + str(blog_flag) + "] \n\n" +
+                                "medium_flag [" + str(medium_flag) + "] \n\n" +
+                                "triathlon_flag [" + str(triathlon_flag) + "] \n\n" +
+                                "twitter_flag" + str(twitter_flag) + "] \n\n" +
+                                "youtube_flag [" + str(youtube_flag) + "] \n\n" +
+                                "youtube_download_flag [" + str(youtube_download_flag) + "] \n\n" +
                                 "send_email [" + str(send_email)
                              )

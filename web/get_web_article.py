@@ -5,6 +5,7 @@ import re
 from newspaper import Article, ArticleException
 import requests # newspaper uses requests, but good to handle potential request errors explicitly
 
+
 def sanitize_filename(filename):
     """Removes or replaces characters invalid for filenames."""
     # Remove invalid characters
@@ -19,6 +20,7 @@ def sanitize_filename(filename):
     if not sanitized:
         sanitized = "untitled_article"
     return sanitized
+
 
 def generate_filename_from_url(url):
     """Generates a plausible filename from the URL path."""
@@ -42,6 +44,7 @@ def generate_filename_from_url(url):
     except Exception:
         # Fallback in case of parsing error
         return "article.txt"
+
 
 def download_article_text(url, output_filename=None):
     """
@@ -68,12 +71,12 @@ def download_article_text(url, output_filename=None):
         article_text = article.text
 
         if not article_text:
-            print("Warning: Could not extract article text. The page might not be an article or is structured unusually.")
+            print("Warning: Could not extract article text.")
             return False
 
         # Determine the output filename
         if output_filename is None:
-            output_filename = generate_filename_from_url(url)
+            output_filename = "c:\\dep\\ContentAI\\zTemp\\articles\\" + generate_filename_from_url(url)
 
         # Save the text to the file
         print(f"Saving article text to: {output_filename}")
@@ -97,11 +100,12 @@ def download_article_text(url, output_filename=None):
          print(f"Error: Network error downloading URL. Reason: {e}")
          return False
     except ArticleException as e:
-        print(f"Error: Failed to process the article. It might not be a standard article format or the URL is invalid. Reason: {e}")
+        print(f"Error: Failed to process the article. Reason: {e}")
         return False
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
         sys.exit(1) # Exit if something unexpected happened
+
 
 # --- Main execution part ---
 if __name__ == "__main__":
@@ -109,14 +113,5 @@ if __name__ == "__main__":
     # Example URL from your question
     default_url = "https://www.ironman.com/news/2026-world-championship-announcement?utm_campaign=7180588-GLOBAL%202025%20-%20IM%20%7C%20Global%20-%20Emails&utm_medium=email&_hsenc=p2ANqtz-8ZGdXZOzTV-aUf_CnSGKj2QpLyjMg-AmfXgTAcmTLs25rZN4FPcW5SVjWiqWggZA1VMo-xqJ1-nOutNsSrHeDW-jqosg&_hsmi=359200270&utm_content=359200270&utm_source=hs_email"
 
-    # Get URL from user input, or use the default if input is empty
-    input_url = input(f"Enter the article URL (or press Enter to use default):\n[{default_url}]\n> ")
-    target_url = input_url.strip() if input_url.strip() else default_url
-
-    # Optional: Ask user for a specific output filename
-    # filename_suggestion = generate_filename_from_url(target_url)
-    # output_file = input(f"Enter output filename (or press Enter to use '{filename_suggestion}'): ")
-    # output_file = output_file.strip() if output_file.strip() else None # Pass None to use generated name
-
-    # Download and save the article (using automatically generated filename)
-    download_article_text(target_url)
+    # Download and save the article
+    download_article_text(default_url)
