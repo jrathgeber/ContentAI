@@ -33,6 +33,6 @@ for key, value in daily_dict.items():
 
     if str(key).startswith("Twitter") and str(value) != "":
 
-        post = perp.get_stock_info(value)
+        post = perp.get_financial_events(value)
         twitter.tweet.tweetSomething(post)
         print("Tweeting ::: " + post)
