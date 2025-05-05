@@ -4,6 +4,8 @@ import mediun.create_article
 import mediun.write_article
 import notion.search as notnsearch
 import notion.get_post as notn
+import notion.upload_data as notdb
+import twitter.gen_tweets as tw
 import twitter.tweet
 import web.get_amazon_product
 import web.get_rockbros_product_gemini
@@ -140,6 +142,9 @@ for key, value in daily_dict.items():
     if str(key).startswith("YouTube Download") and str(value) != "    " and youtube_download_flag:
         video_text = youtubevids.download_transcript.fetch_it(value.partition("=")[2])
         print("Downloading ::: " + value)
+        tweets = tw.generate_them(value)
+        print(tweets)
+        #notdb.add_item("Charlie", "Morgan", "tweets")
 
 if medium_flag and medium_set:
 

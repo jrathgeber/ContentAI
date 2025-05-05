@@ -31,3 +31,30 @@ def write_article(key_words, further_info):
     print(response.choices[0].message.content)
 
     return response.choices[0].message.content
+
+
+def get_tweets(key_words, further_info):
+
+    # Get Reference to Properties
+    config = configparser.ConfigParser()
+    config.read('C:\\etc\\properties.ini')
+
+    client = OpenAI(
+        # This is the default and can be omitted
+        api_key=config['openai']['api_key'],
+    )
+
+    GPT_MODEL = 'gpt-4o-mini'
+    O1_MODEL = 'o3-mini'
+
+    prepend = ""
+    instructions = "Create 10 good tweets from this article titled:  "
+    keywords = key_words
+    further_info = further_info
+
+    prompt = prepend + " " + instructions + " " + keywords + " this is the article text : " + further_info
+    response = client.chat.completions.create(model=O1_MODEL,messages=[{"role":"user","content": prompt}])
+
+    print(response.choices[0].message.content)
+
+    return response.choices[0].message.content
