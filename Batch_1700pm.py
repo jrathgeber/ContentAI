@@ -83,7 +83,11 @@ for key, value in daily_dict.items():
 
     if str(key).startswith("Web") and str(value) != "    " and web_flag:
         web_article = value.lstrip()
-        web.get_web_article.download_article_text(web_article)
+        text = web.get_web_article.download_article_text(web_article)
+        print(text)
+        if len(text) > 2000:
+            text = text[:2000]
+        notdb.upload_to_notion("AI Mumbo", text, "AI")
 
     if str(key).startswith("Amazon") and str(value) != "    " and amzn_flag:
         print("[" + str(value) + "]")

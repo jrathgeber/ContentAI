@@ -47,6 +47,7 @@ def generate_filename_from_url(url):
 
 
 def download_article_text(url, output_filename=None):
+
     """
     Downloads the main text content of an article from a URL
     and saves it to a text file.
@@ -88,13 +89,14 @@ def download_article_text(url, output_filename=None):
                 f.write("--- Article Text ---\n\n")
                 f.write(article_text)
             print(f"Successfully saved article to {output_filename}")
-            return True
+            #return True
         except IOError as e:
             print(f"Error: Could not write to file {output_filename}. Reason: {e}")
             return False
         except Exception as e:
             print(f"An unexpected error occurred during file writing: {e}")
             return False
+
 
     except requests.exceptions.RequestException as e:
          print(f"Error: Network error downloading URL. Reason: {e}")
@@ -106,12 +108,14 @@ def download_article_text(url, output_filename=None):
         print(f"An unexpected error occurred: {e}")
         sys.exit(1) # Exit if something unexpected happened
 
+    return article_text
 
 # --- Main execution part ---
 if __name__ == "__main__":
 
     # Example URL from your question
-    default_url = "https://www.ironman.com/news/2026-world-championship-announcement?utm_campaign=7180588-GLOBAL%202025%20-%20IM%20%7C%20Global%20-%20Emails&utm_medium=email&_hsenc=p2ANqtz-8ZGdXZOzTV-aUf_CnSGKj2QpLyjMg-AmfXgTAcmTLs25rZN4FPcW5SVjWiqWggZA1VMo-xqJ1-nOutNsSrHeDW-jqosg&_hsmi=359200270&utm_content=359200270&utm_source=hs_email"
-
+    default_url = "https://info.deeplearning.ai/openais-hit-image-generator-hot-ai-startups-better-recommendations-music-generation-for-pros-1746050270269?ecid=ACsprvug5lTWkVo8ZgkZpl1xSsutB_ewEBsUsSKsL1Nigqql3HOYZaW4DPxrwb98HILXgksEmEE0&utm_campaign=The%20Batch&utm_medium=email&_hsenc=p2ANqtz-9FjNZzTep43lzm7VAwmPcViLHiguoZh6tacAauSGLICgHvjXbf0ZaQcIJ3k45d8cg2pWALY0uJ3_20-GkErWefCklXsA&_hsmi=359326459&utm_content=359326459&utm_source=hs_email"
     # Download and save the article
-    download_article_text(default_url)
+    text = download_article_text(default_url)
+
+    print(text)

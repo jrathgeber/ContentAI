@@ -1,0 +1,25 @@
+Source URL: https://info.deeplearning.ai/openais-hit-image-generator-hot-ai-startups-better-recommendations-music-generation-for-pros-1746050270269?ecid=ACsprvug5lTWkVo8ZgkZpl1xSsutB_ewEBsUsSKsL1Nigqql3HOYZaW4DPxrwb98HILXgksEmEE0&utm_campaign=The%20Batch&utm_medium=email&_hsenc=p2ANqtz-9FjNZzTep43lzm7VAwmPcViLHiguoZh6tacAauSGLICgHvjXbf0ZaQcIJ3k45d8cg2pWALY0uJ3_20-GkErWefCklXsA&_hsmi=359326459&utm_content=359326459&utm_source=hs_email
+
+Title: OpenAI’s Hit Image Generator, Hot AI Startups, Better Recommendations, Music Generation for Pros
+
+--- Article Text ---
+
+Dear friends,
+
+I hope we can empower everyone to build with AI. Starting from K-12, we should teach every student AI enabled coding, since this will enable them to become more productive and more empowered adults. But there is a huge shortage of computer science (CS) teachers. I recently spoke with high school basketball coach Kyle Creasy, who graduated with a B.A. in Physical Education in 2023. Until two years ago, he had never written a line of Python. Now — with help from AI — he not only writes code, he also teaches CS. I found Kyle’s story inspiring as a model for scaling up CS education in the primary- and secondary-school levels.
+
+
+
+Kyle’s success has been with the support of Kira Learning (an AI Fund portfolio company), whose founders Andrea Pasinetti and Jagriti Agrawal have created a compelling vision for CS education. In K-12 classrooms, teachers play a huge social-emotional support role, for example, encouraging students and helping them when they stumble. In addition, they are expected to be subject-matter experts who can deliver the content needed for their subject. Kira Learning uses digital content delivery — educational videos, autograded quizzes, and AI-enabled chatbots to answer students' questions but without giving away homework answers — so the teacher can focus on social-emotional support. While these are still early days, it appears to be working!
+
+
+
+A key to making this possible is the hyperpersonalization that is now possible with AI (in contrast to the older idea of the flipped classroom, which had limited adoption). For example, when assigned a problem in an online coding environment, if a student writes this buggy line of Python code
+
+
+
+best_$alty_snack = 'potato chips'
+
+
+
+Kira Learning’s AI system can spot the problem and directly tell the teacher that $ is an invalid character in a variable name. It can also suggest a specific question for the teacher to ask the student to help get them unstuck, like “Can you identify what characters are allowed in variable names?” Whereas AI can directly deliver personalized advice to students, the fact that it is now helping teachers also deliver personalized support will really help in K-12.
