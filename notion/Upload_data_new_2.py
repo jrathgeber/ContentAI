@@ -28,16 +28,7 @@ def upload_to_notion(title, content, tags):
             "Title": {"title": [{"text": {"content": title}}]},
             "Tags": {"multi_select": [{"name": tag} for tag in tags]},
             "Date": {"date": {"start": datetime.now().isoformat()}}
-        },
-        "children": [
-            {
-                "object": "block",
-                "type": "paragraph",
-                "paragraph": {
-                    "rich_text": [{"type": "text", "text": {"content": content}}]
-                }
-            }
-        ]
+        }
     }
 
     response = requests.post(url, headers=headers, data=json.dumps(data))
@@ -48,8 +39,7 @@ def upload_to_notion(title, content, tags):
 
 
 if __name__ == "__main__":
-
-    title = "Sample Notion Post"
+    title = "Sample Notion Post 3"
     content = "This is a sample post uploaded via the Notion API."
     tags = ["sample", "api", "python"]
 

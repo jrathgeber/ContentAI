@@ -4,7 +4,7 @@ import mediun.create_article
 import mediun.write_article
 import notion.search as notnsearch
 import notion.get_post as notn
-import notion.upload_data as notdb
+import notion.Upload_data_new as notdb
 import twitter.gen_tweets as tw
 import twitter.tweet
 import web.get_amazon_product
@@ -144,7 +144,9 @@ for key, value in daily_dict.items():
         print("Downloading ::: " + value)
         tweets = tw.generate_them(value)
         print(tweets)
-        #notdb.add_item("Charlie", "Morgan", "tweets")
+        if len(tweets) > 2000:
+            tweets = tweets[:2000]
+        notdb.upload_to_notion("Charlie Morgan", tweets, "work")
 
 if medium_flag and medium_set:
 
