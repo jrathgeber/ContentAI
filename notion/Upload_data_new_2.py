@@ -33,13 +33,12 @@ def upload_to_notion(title, content, tags):
     }
 
     response = requests.post(url, headers=headers, data=json.dumps(data))
-
     print(response.json())
-
     return response.json()
 
 
 if __name__ == "__main__":
+
     title = "Sample Notion Post 3"
     content = "This is a sample post uploaded via the Notion API."
     tags = ["sample", "api", "python"]

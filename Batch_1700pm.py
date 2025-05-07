@@ -153,9 +153,13 @@ for key, value in daily_dict.items():
         tweets = tw.generate_them(value)
         i=0
         lines = tweets.splitlines()
+        pattern = re.compile(r"^\s*(-?\d+(?:\.\d+)?|-?\.\d+)\s*(.*)")
         for line in lines:
-            if re.match(r"^\d", line): # ^\d means "starts with a digit"
-                notdb.upload_to_notion("Morgy" , line, "AI")
+            match = pattern.match(line)
+            if match:
+                number_part = match.group(1)
+                text_part = match.group(2).strip('.').lstrip()
+                notdb.upload_to_notion(number_part, text_part, ['YouTube', 'Work'])
 
 if medium_flag and medium_set:
 
