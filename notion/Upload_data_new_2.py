@@ -27,7 +27,8 @@ def upload_to_notion(title, content, tags):
         "properties": {
             "Title": {"title": [{"text": {"content": title}}]},
             "Tags": {"multi_select": [{"name": tag} for tag in tags]},
-            "Date": {"date": {"start": datetime.now().isoformat()}}
+            "Date": {"date": {"start": datetime.now().isoformat()}},
+            "Tweet": {"rich_text": [{"text": {"content": content}}]}
         }
     }
 

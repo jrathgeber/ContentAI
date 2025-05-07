@@ -1,10 +1,11 @@
+import re
 import ai.ClaudeCode
 import blog.write_blog
 import mediun.create_article
 import mediun.write_article
 import notion.search as notnsearch
 import notion.get_post as notn
-import notion.Upload_data_new as notdb
+import notion.Upload_data_new_2 as notdb
 import twitter.gen_tweets as tw
 import twitter.tweet
 import web.get_amazon_product
@@ -84,10 +85,13 @@ for key, value in daily_dict.items():
     if str(key).startswith("Web") and str(value) != "    " and web_flag:
         web_article = value.lstrip()
         text = web.get_web_article.download_article_text(web_article)
+
         print(text)
-        if len(text) > 2000:
-            text = text[:2000]
-        notdb.upload_to_notion("AI Mumbo", text, "AI")
+
+        lines = text.splitlines()
+        for line in lines:
+            if re.match(r"^\d", line): # ^\d means "starts with a digit"
+                notdb.upload_to_notion("AI Mumbo", line, "AI")
 
     if str(key).startswith("Amazon") and str(value) != "    " and amzn_flag:
         print("[" + str(value) + "]")
@@ -147,10 +151,11 @@ for key, value in daily_dict.items():
         video_text = youtubevids.download_transcript.fetch_it(value.partition("=")[2])
         print("Downloading ::: " + value)
         tweets = tw.generate_them(value)
-        print(tweets)
-        if len(tweets) > 2000:
-            tweets = tweets[:2000]
-        notdb.upload_to_notion("Charlie Morgan", tweets, "work")
+        i=0
+        lines = tweets.splitlines()
+        for line in lines:
+            if re.match(r"^\d", line): # ^\d means "starts with a digit"
+                notdb.upload_to_notion("Morgy" , line, "AI")
 
 if medium_flag and medium_set:
 
