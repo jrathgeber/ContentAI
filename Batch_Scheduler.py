@@ -1,6 +1,7 @@
 import time
 import datetime
 import schedule
+import notion.download_data as nt
 
 import Batch_1200pm
 
@@ -26,6 +27,10 @@ schedule.every().day.at("15:00").do(print_current_time)
 
 print("Scheduler started. Waiting for scheduled times...")
 print("Scheduled times: 9:10 AM, 12:00 PM, and 5:00 PM")
+
+tweet = nt.main()
+
+print("Tweeting :: " + tweet)
 
 # Keep the script running
 while True:
