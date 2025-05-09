@@ -150,7 +150,7 @@ for key, value in daily_dict.items():
     if str(key).startswith("YouTube Download") and str(value) != "    " and youtube_download_flag:
         video_text = youtubevids.download_transcript.fetch_it(value.partition("=")[2])
         print("Downloading ::: " + value)
-        tweets = tw.generate_them(value)
+        tweets = tw.generate_them(video_text)
         i=0
         lines = tweets.splitlines()
         pattern = re.compile(r"^\s*(-?\d+(?:\.\d+)?|-?\.\d+)\s*(.*)")

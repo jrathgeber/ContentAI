@@ -3,7 +3,7 @@ import ai.OpenAi013 as ai
 
 def generate_them(data_file):
 
-    twitter_content = ai.get_tweets("10 Dark Ways to Get Rich Fast", data_file)
+    twitter_content = ai.get_tweets(data_file)
 
     # File path where you want to save the HTML file
     # file_path = path + "article_" + number + "_" + slug + ".html"

@@ -33,7 +33,7 @@ def write_article(key_words, further_info):
     return response.choices[0].message.content
 
 
-def get_tweets(key_words, further_info):
+def get_tweets( trancript):
 
     # Get Reference to Properties
     config = configparser.ConfigParser()
@@ -45,15 +45,14 @@ def get_tweets(key_words, further_info):
     )
 
     GPT_MODEL = 'gpt-4o-mini'
-    O1_MODEL = 'o3-mini'
+    # O1_MODEL = 'o3-mini'
 
     prepend = ""
-    instructions = "Create 10 good tweets from this article titled:  "
-    keywords = key_words
-    further_info = further_info
+    instructions = "Find 10 good tweets from the following text :  "
 
-    prompt = prepend + " " + instructions + " " + keywords + " this is the article text : " + further_info
-    response = client.chat.completions.create(model=O1_MODEL,messages=[{"role":"user","content": prompt}])
+    prompt = instructions + " : " + trancript
+
+    response = client.chat.completions.create(model=GPT_MODEL,messages=[{"role":"user","content": prompt}])
 
     print(response.choices[0].message.content)
 
