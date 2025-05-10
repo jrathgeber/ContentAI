@@ -159,7 +159,7 @@ for key, value in daily_dict.items():
             if match:
                 number_part = match.group(1)
                 text_part = match.group(2).strip('.').lstrip()
-                notdb.upload_to_notion(number_part, text_part, ['YouTube', 'Work'])
+                notdb.upload_to_notion(number_part, "Zeno", text_part, ['YouTube', 'Manifest'])
 
 if medium_flag and medium_set:
 

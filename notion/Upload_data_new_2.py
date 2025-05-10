@@ -19,13 +19,14 @@ headers = {
 }
 
 
-def upload_to_notion(title, content, tags):
+def upload_to_notion(title, author, content, tags):
     url = f"https://api.notion.com/v1/pages"
 
     data = {
         "parent": {"database_id": DATABASE_ID},
         "properties": {
             "Title": {"title": [{"text": {"content": title}}]},
+            "Author": {"rich_text": [{"text": {"content": author}}]},
             "Tags": {"multi_select": [{"name": tag} for tag in tags]},
             "Date": {"date": {"start": datetime.now().isoformat()}},
             "Tweet": {"rich_text": [{"text": {"content": content}}]}
@@ -40,8 +41,9 @@ def upload_to_notion(title, content, tags):
 if __name__ == "__main__":
 
     title = "Sample Notion Post 3"
+    author = "Zeno"
     content = "This is a sample post uploaded via the Notion API."
     tags = ["sample", "api", "python"]
 
-    result = upload_to_notion(title, content, tags)
+    result = upload_to_notion(title, author, content, tags)
     print(f"Page created: {result.get('url', 'Error: Page not created')}")

@@ -18,10 +18,13 @@ NOTION_DATABASE_ID = "1ebe46d2882f807d966cfbc286fe31d1"
 # --- Field Names in your Notion Database ---
 # IMPORTANT: These MUST match the exact names of your properties in Notion.
 # Case-sensitive!
-TITLE_FIELD = "Name"  # Or "Title", "Topic", etc. - The main title property
-DATE_FIELD = "Date"   # The name of your Date property
-TAGS_FIELD = "Tags"   # The name of your Multi-select property for tags
-TWEET_FIELD = "Tweet" # The name of your Rich Text or Text property for the tweet
+
+TITLE_FIELD = "Name"        # Or "Title", "Topic", etc. - The main title property
+DATE_FIELD = "Date"         # The name of your Date property
+TAGS_FIELD = "Tags"         # The name of your Multi-select property for tags
+TWEET_FIELD = "Tweet"       # The name of your Rich Text or Text property for the tweet
+AUTHOR_FIELD = "Author"     # The name of your Rich Text or Text property for the tweet
+
 
 def get_property_value(page_properties, prop_name, prop_type):
     """Helper function to safely extract property values."""
@@ -41,6 +44,7 @@ def get_property_value(page_properties, prop_name, prop_type):
     else:
         # print(f"Warning: Unsupported property type '{prop_type}' for '{prop_name}'.")
         return None
+
 
 def fetch_all_database_items(notion_client, database_id):
     """Fetches all items from a Notion database, handling pagination."""
@@ -70,6 +74,7 @@ def fetch_all_database_items(notion_client, database_id):
                 "date": get_property_value(properties, DATE_FIELD, "date"),
                 "tags": get_property_value(properties, TAGS_FIELD, "multi_select"),
                 "tweet": get_property_value(properties, TWEET_FIELD, "rich_text"),
+                "author": get_property_value(properties, AUTHOR_FIELD, "rich_text"),
             }
             all_items.append(item_data)
 
@@ -113,6 +118,7 @@ def main():
     # Print the random item
     print("\n--- Randomly Selected Item ---")
     print(f"ID:    {random_item.get('id', 'N/A')}")
+    print(f"Author: {random_item.get('author', 'N/A')}")
     print(f"Title: {random_item.get('title', 'N/A')}")
     print(f"Date:  {random_item.get('date', 'N/A')}")
     print(f"Tags:  {', '.join(random_item.get('tags', [])) if random_item.get('tags') else 'N/A'}")
