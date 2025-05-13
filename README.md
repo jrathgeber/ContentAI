@@ -3,7 +3,7 @@
 <!-- HEADER STYLE: CLASSIC -->
 <div align="center">
 
-<img src="zTemp/ContentAI.jpg" width="30%" style="position: relative; top: 0; right: 0;" alt="Project Logo"/>
+<img src="zTemp/images/ContentAI.jpg" width="30%" style="position: relative; top: 0; right: 0;" alt="Project Logo"/>
 
 # ContentAI
 
