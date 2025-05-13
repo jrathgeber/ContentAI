@@ -45,14 +45,14 @@ def write(title):
     file_path_image = blog_path + "\\assets\\custom\\images\\blog\\"
     file_path_thumb = blog_path + "\\assets\\custom\\images\\blog\\thumbs\\"
 
-#   Article.new_article(file_path, article_number, slug, key_words, full_prompt)
-#   Post.new_post(file_path_bp, article_number, slug, key_words, formatted_date)
-#   Image.new_image(file_path_image, file_path_thumb, article_number, slug, key_words, formatted_date)
-#   IndexPage.add_blog(blog_path, article_number, slug, key_words, formatted_date)
+    Article.new_article(file_path, article_number, slug, key_words, full_prompt)
+    Post.new_post(file_path_bp, article_number, slug, key_words, formatted_date)
+    Image.new_image(file_path_image, file_path_thumb, article_number, slug, key_words, formatted_date)
+    IndexPage.add_blog(blog_path, article_number, slug, key_words, formatted_date)
 
-#    ArticleStyle.replace_stype(file_path_bp, article_number, slug, key_words, formatted_date)
+    ArticleStyle.replace_stype(file_path_bp, article_number, slug, key_words, formatted_date)
 
-#    BlogIndex.update_config_index(int(blog_index)+1)
+    BlogIndex.update_config_index(int(blog_index)+1)
 
-    Gd.publish_blog(file_path, article_number, slug, "Article")
+    Gd.publish_blog(file_path, slug, "Article")
 
