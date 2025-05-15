@@ -16,6 +16,10 @@
 
 <img src="https://img.shields.io/badge/Python-3776AB.svg?style=default&logo=Python&logoColor=white" alt="Python">
 
+and
+
+<img src="zTemp/images/notion_icon.webp" width="30%" style="position: relative; top: 0; right: 0;" alt="Notion"/>
+
 </div>
 <br>
 
@@ -778,9 +782,19 @@ ContentAI is more than just a tool; it's a partner in your digital journey. By a
 
 ## Getting Started
 
-### Prerequisites
+1) Make a notion page in your workspace with todays date as the name.
 
-This project requires the following dependencies:
+<img src="zTemp/images/notion_sample.png" width="70%" style="position: relative; top: 0; right: 0;" alt="Notion"/>
+
+2) Add all required api keys to properties_template.ini.
+
+Then rename it to properties.ini and save to C:\etc\properties.ini
+
+3) continue with Python bit as per below.
+
+### Python Prerequisites
+
+This python  project requires the following dependencies:
 
 - **Programming Language:** Python
 - **Package Manager:** Pip
