@@ -148,7 +148,12 @@ for key, value in daily_dict.items():
             yt_key = value.partition("Key: ")[2]
 
     if str(key).startswith("YouTube Download") and str(value) != "    " and youtube_download_flag:
+
+        if ":" in str(value):
+            yt_catagory = value.partition(":")[1]
+
         video_text = youtubevids.download_transcript.fetch_it(value.partition("=")[2])
+
         print("Downloading ::: " + value)
         tweets = tw.generate_them(video_text)
         i=0
