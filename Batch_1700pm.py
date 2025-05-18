@@ -147,14 +147,19 @@ for key, value in daily_dict.items():
         if "Key:" in str(value):
             yt_key = value.partition("Key: ")[2]
 
-    if str(key).startswith("YouTube Download") and str(value) != "    " and youtube_download_flag:
+    if str(key).startswith("YouTube Transcript") and str(value) != "    " and youtube_download_flag:
+
+        yt_catagory = 'General'
+
+        print("Author ::: " + value.partition(":")[0])
 
         if ":" in str(value):
-            yt_catagory = value.partition(":")[1]
+            yt_catagory = value.partition(":")[0]
 
+        print("Downloading ::: " + value.partition("=")[2])
         video_text = youtubevids.download_transcript.fetch_it(value.partition("=")[2])
 
-        print("Downloading ::: " + value)
+        print("Collecting tweets ::: " + video_text)
         tweets = tw.generate_them(video_text)
         i=0
         lines = tweets.splitlines()
@@ -164,7 +169,7 @@ for key, value in daily_dict.items():
             if match:
                 number_part = match.group(1)
                 text_part = match.group(2).strip('.').lstrip()
-                notdb.upload_to_notion(number_part, "Zeno", text_part, ['YouTube', 'Manifest'])
+                notdb.upload_to_notion(number_part, yt_catagory, text_part, ['YouTube', 'Manifest'])
 
 if medium_flag and medium_set:
 

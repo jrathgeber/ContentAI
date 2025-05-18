@@ -1,0 +1,441 @@
+One of the most fundamental physics facts is 
+that the speed of light in a vacuum is constant  
+for all observers. But can we really be sure that 
+the speed of light wasn’t different in the past,  
+or perhaps in other parts of the universe? In 
+fact, variable speed of light theories have long  
+been used to try to explain everything 
+from dark energy to gravity itself.  
+So let’s explore how constant this 
+fundamental constant really is.
+Speed is relative. Drop your smoothie on a 
+train and it appears to fall straight down,  
+but to me standing on the platform 
+the smoothie falls diagonally,  
+apparently boosted by the speed of the train. But 
+shine a laser beam from the train and everyone  
+observes the same speed—299,792,458 m/s in 
+a vacuum, no matter their relative speeds.
+The invariance of the speed of light is 
+more precisely described by something  
+called Lorentz invariance, and it’s the 
+founding axiom of special relativity.  
+Einstein realized that our measurements 
+of distance and time have to be relative  
+to the observer—they have to shift to keep 
+the speed of light the same for everyone.  
+This same axio m is also fundamental to 
+general relativity, in which gravity is  
+interpreted as a warping of the fabric of
+spacetime. Both special and general  
+relativity have been tested with extreme care and 
+precision over and over and have never failed.  
+More to the point, the speed of light has 
+been measured in different reference frames  
+and its invariance holds down to the 
+exquisite precision of current methods.
+That said, we scientists are supposed to remain 
+simultaneously skeptical and open minded—somehow  
+applying both mindsets to both old and new 
+theories. So in that spirit let’s ask whether the  
+speed of light is really invariant. For example, 
+could it change over time, or be different in  
+different parts of the universe? There are some 
+who believe that the very effects that relativity  
+predicts are due to the speed of light changing, 
+not due to changes in space and time themselves.
+Now before I start talking about what it 
+means for the speed of light to change,  
+I want to make it clear why many, and perhaps most 
+physicists think that it’s not only impossible,  
+but it’s not even meaningful to think 
+about a variable speed of light.
+The speed of light isn’t really about light. 
+It’s the speed of any massless particle,  
+and also the maximum speed that information 
+can travel. It’s the speed of causality. It’s  
+the rate at which one point in space 
+can communicate with its neighbors,  
+assuming no impediments. So to change the speed 
+of light, we’d need to change something pretty  
+fundamental about the universe—the 
+connection between space and time.
+We measure speed in terms of the amount 
+of distance traveled per unit of time,  
+whether that’s miles per hour or 
+meters per second. Changing the  
+speed of light means changing the number 
+of meters it can travel every second.  
+The problem with this is that our very definition 
+of meters and of seconds are tied to the speed of  
+light. We can think of the meter as the distance 
+light travels in 1-over-300 million seconds. Or  
+we can think of the second as how long it 
+takes light to travel 300 million meters.
+Einstein said that “time is what clocks measure”,  
+which we can interpret as meaning that it’s a 
+measure of the rate of change of the universe.  
+One of Einstein’s thought experiments was 
+the photon clock, in which he imagined a  
+photon bouncing between two mirrors, and each 
+2-way trip indicates the tick of the clock.  
+What happens if we slow the speed of light? The 
+clock ticks more slowly, which means time slows.
+Now real clocks are made of gears or 
+electronics which are made of atoms which  
+are made of various quantum oscillations bound 
+up in ways analogous to the photon clock—whether  
+electrons communicating virtual photons with 
+the nucleus, or quarks exchanging gluons in  
+that nucleus. This argument applies for any 
+object with mass—the speed of light dictates  
+the rate of internal change, which determines 
+the rate of the flow of time for all matter.
+So if slowing light also slows time, would we 
+even notice? Not according to special relativity,  
+in which space and time are fundamentally 
+coupled—two sides of the same coin.  
+Changing the speed of light slows time, and 
+moving the mirrors further apart also slows  
+time. In this picture, distance, time, 
+and the speed of light scale together,  
+so on our scale there’s no observable 
+effect. The speed of light is just the unit  
+conversion factor between our arbitrary 
+choices of spatial and temporal units.
+The only way for a change in the speed of 
+light to do anything is if time and space  
+both have their own fundamental units that are 
+independent of each other. If there’s a basic  
+smallest unit of space and a smallest unit of 
+time, and these don’t depend on the other, then  
+maybe changing the speed of light would change the 
+relationship between space and time, at least on  
+the quantum scale. So let’s imagine that this 
+is possible and explore the consequences.
+The first real “variable speed of light” or "VSL" 
+theory was proposed by Robert Dicke back in 1957.  
+Dicke was a brilliant physicist and astronomer 
+with wide-ranging contributions, so we should  
+at least pay attention to his musings. Dicke 
+wondered if gravitational fields might not be  
+due to the bending of spacetime, but instead due 
+to the speed of light slowing down near massive  
+objects. Remember that light changes its direction 
+as it moves into a medium where its speed is  
+lower—that’s exactly how lenses work. So why 
+not gravity too? And we know that time does tick  
+slower in a gravitational field. And we now know 
+that slowing the speed of light should slow time.  
+It seems like a variable speed of light could 
+be an elegant alternative hypothesis, no?
+No. Back in 1957 there were only a few 
+successful tests of general relativity,  
+and some of those were consistent with either 
+spacetime curvature or a changing speed of light.
+But nowadays we know that spacetime itself must 
+be dynamic—we’ve measured how rotating masses  
+drag space around, and how colliding black holes 
+generate gravitational waves, none of which work  
+with the variable speed of light interpretation. 
+Dicke’s idea was intriguing, but it doesn’t stand  
+up to the latest evidence. And given that 
+evidence, Dicke himself would surely agree.
+OK, so maybe a variable speed of light doesn’t 
+explain all of gravity. But could it still play  
+a part? There’s one weird fact about our universe 
+that could possibly be explained by this idea. If  
+we look at the edge of the observable universe in 
+that direction we see the warm, smooth gas that  
+existed before any stars or galaxies formed. 
+We see exactly the same in that direction,  
+or that, or that. The universe at early times 
+was extremely homogeneous—almost the same  
+density and temperature everywhere. That tells 
+us that at some point in the distant past all  
+of that material had to have been in contact 
+in order to distribute energy and settle into  
+the same state. But the problem is, based on the 
+observed rate of expansion of the universe, there  
+just wasn’t time since the Big Bang for those 
+regions to have communicated with each other.
+We’ve talked about this so called "horizon 
+problem" previously, along with the  
+mainstream solution of cosmic inflation.
+Inflation hypothesizes that at some very  
+early time those distant regions were 
+in causal contact with each other,  
+enabling them to share energy at regular light 
+speed and reach the same temperature. But then  
+the universe underwent a period of extremely 
+rapid expansion much faster than the speed  
+of light before slowing dramatically. This 
+threw apart regions that were close enough  
+to be in thermal equilibrium so far apart that 
+it appears now as if they could never have been.
+But there is another way to 
+bring those distant points into  
+causal contact—and that’s by having light just 
+move faster in the past. This could have kept  
+the early universe connected as it expanded and 
+reached uniformity. Then, if light slowed down  
+to the current much slower speed, distant 
+regions would seem causally disconnected.
+And if this story is right, it could even 
+be that the speed of light has been gently  
+decreasing ever since. It has been suggested that 
+this could explain why many galaxies appear to  
+be accelerating away from us. Since light is 
+supposedly becoming slower it's taking longer  
+and longer for their light to reach us, giving 
+the appearance that they are accelerating away  
+from us. That may sound good, but variable speed 
+of light theories don’t have a good explanation  
+for why lightspeed would change in the very 
+particular way needed to mimic both inflation  
+and dark energy. Cosmic inflation seems a little 
+cleaner, and is certainly better accepted.
+The first effort to explain the horizon problem 
+with a variable speed of light was by John Moffat  
+in 1992. He proposed that the speed of light 
+may have been 10^30 m/s in the early universe.  
+Moffat lays out some substantial theoretical 
+work, involving symmetry breaking - analogous  
+to the one that separated the electromagnetic 
+and weak forces. But in this case the broken  
+symmetry was Lorentz invariance. Moffat’s theory 
+preserved Lorentz invariance on relatively small  
+scales—like across the galaxy—but allowed 
+it to vary over cosmological distances and  
+times. Another similar idea came from 
+Andreas Albrecht and Joao Magueijo.
+And yet another VSL model depends 
+on the energy of light—higher  
+energy photons would move faster. Perhaps then 
+the ultra-high energy photons near the big  
+bang did travel fast enough to connect 
+distant points of the universe. Then,  
+as the universe cooled, those high energy 
+photons became rare and so light slowed down.  
+Now we have absolutely never observed speed 
+differences for lights of different energies
+at any energy we’ve detected, and 
+that includes comparing the arrival  
+times of high energy gamma ray light from 
+gamma ray bursts with the arrival times  
+of lower energy light from the same 
+explosions. But maybe the effect only  
+kicks in at the really ridiculously 
+high energies near the big bang.
+These are fun ideas, but are they testable 
+given that VSL theories predict the same  
+thing as more standard ideas in 
+general relativity? Well, there's 
+another way to look for changes in the speed 
+of light. And that by its effects on physics.  
+“c” appears everywhere in our laws of physics—for 
+example in the fine structure constant,  
+which defines the strength of electromagnetism. 
+The formula for alpha includes the charge of  
+the electron, the electric permittivity of the 
+vacuum, Planck's constant, and the speed of light.  
+We’ve talked about this important 
+constant of nature in the past,  
+and even about whether it may have changed over 
+time. Well, if the speed of light has changed  
+then you’d expect the fine structure constant 
+to change with it. And guess what—there’s no  
+evidence of such a change. You can see our 
+previous episode for that lack of evidence.
+None of this proves that the speed 
+of light has never varied—it just  
+says it can’t have varied much 
+over the past billions of years.  
+But the real challenge for VSL theories 
+is how they seem to break physics.
+All VSL theories break Lorentz Invariance, 
+and Lorentz Invariance seems pretty important  
+for the universe to make sense. Remember the 
+example about the smoothie from the beginning  
+of the video? In that example you and I had 
+a different interpretation of the same event,  
+and yet, we both would agree 
+on every aspect that mattered,  
+like the fact that the smoothie hits 
+the floor at a particular location,  
+or that it hits the floor after it's 
+dropped rather than before it's dropped.
+The basic self consistency of the universe and 
+the causal ordering of events is ensured under  
+Lorentz invariance. Break it and it’s pretty 
+easy to come up with nonsensical scenarios in  
+which different observers have irreconcilable 
+disagreements about the outcomes of events.
+A variable speed of light also breaks 
+the fundamental charge-parity-time  
+or CPT symmetry of the universe, 
+in that the laws of physics look  
+fundamentally different depending on 
+which direction of time you're moving.  
+We’ve discussed CPT symmetry before. This 
+is also problematic because CPT symmetry  
+is believed to be truly fundamental, and 
+we have no other evidence of it breaking.
+There are ways around some of these objections. 
+For example, we can imagine that the change in  
+the speed of light is not exactly fundamental, 
+but more akin to how that speed changes in a  
+dense medium like water. So what if the 
+refractive index of the universe changed  
+over time? Well, that increase in the thickness 
+of the vacuum would have to be pretty enormous  
+in order to slow light by the factor of 
+10^22 needed to solve the horizon problem.  
+And that change appears to affect all light-speed 
+waves equally—all frequencies of light,  
+as well as gravitational waves. Regular materials 
+don’t behave like this. Still, it is a sort of way  
+out. And there are some other narrow paths 
+through the dense network of refutations  
+of VSL theories. However you need to be pretty 
+committed to these ideas to find these ways out.
+Currently there’s no evidence that the 
+speed of light varies in a fundamental way,  
+and it may be that it’s not even a meaningful 
+concept. Although that latter point depends on an  
+understanding of the quantum nature of space and 
+time and their relationship to each other that we  
+don’t yet have. It’s absolutely worth going back 
+and questioning the founding axioms of even our  
+most successful theories, as long as we keep in 
+mind that any new theory is going to have to do  
+just as well or better than the old one in all 
+of its predictions. And that’s a tall order when  
+you’re trying to break relativity, which has such 
+deep internal consistency and is so powerfully  
+predictive. But relativity is not the final 
+theory due to its clash with quantum mechanics,  
+so do let’s keep questioning it. Including 
+whether the cosmic speed limit is fixed,  
+or we can somehow change how fast 
+information travels though spacetime.
+So we missed one or two comment 
+responses recently. Actually,  
+we missed six. It’s my fault - there’s been 
+a lot going on, including too much travel,  
+and these responses actually take a lot of 
+thought. So today we’re going back and doing  
+responses for a selection of the missed episodes. 
+We’ll do one comment from each of these, but we’ll  
+do each very fully. We’ll also do them out of 
+order. We have the superfluid episode, the one  
+about turning the Sun in to a spaceship, the one 
+about detecting planet-sized spaceships with LIGO,  
+and then the one about when and how terrible or 
+awesome the next nearby supernova is likely to be.
+Before we jump into that, I also need to 
+note a correction for our episode on the  
+model of the proton interior. We talked about 
+the important contributions of Stan Brodsky  
+from the Stanford Linear Accelerator, but 
+managed to use a picture of the wrong Stan  
+Brodsky. Apologies to both Stans. THis is 
+the Stan Brodsky we meant to shout out..
+OK, finally to the comments, and starting 
+with superfluids. Here’s an insightful  
+comment on our episode on superfluids. 
+Martinstent5339 suggests that it would  
+be impossible to stir up a superfluid into a 
+vortex because the fluid would just slip around  
+the spoon rather than being pushed into 
+a flow. There’s some good intuition here,  
+but the conclusion is not quite right. The 
+spoon does impart energy to the fluid—after all,  
+the helium atoms have to move if they can’t pass 
+through the spoon. And those moving atoms push on  
+other atoms, so you do get a new flow which can 
+translate to a rotation if the spoon is stirring.  
+The point of the superfluid love moving 
+in unison—in streamline flows, and the  
+vortex is such a flow. What superfluids hate is 
+atom-to-atom-level exchanges of random chunks  
+of energy—they hate dissipative interactions 
+which translate to friction, heat buildup,  
+and viscous motion. However, as I mentioned in 
+that video, it is possible to induce a sort of  
+emergent viscosity by creating tiny vortices 
+in the superfluid which then interact with  
+each other in a way that disrupts viscous 
+flow. That happens due to interaction with  
+a non-perfectly smooth container wall, but 
+stirring with a spoon should do some of that.
+Let’s move on to the episode where we described 
+ways to move the entire Sun to different galactic  
+orbits. SABRMatt2010 has a major problem with 
+the claim that the planets in a star's orbit  
+would just come along for the ride when 
+thrusting a star because it would create  
+a momentary imbalance in the field that could 
+destabilize carefully tuned orbital resonances.  
+So you’re absolutely right that moving 
+the Sun wouldn’t drag the planets along  
+with literally zero effect. Moving the Sun a 
+very tiny amount changes the center of mass of  
+the solar system and the orbits would have to 
+shift. If that change was tiny they’d quickly  
+find a new stable orbit not much different 
+to their last and still close to resonance.  
+If the Sun keeps moving, but moves slowly compared 
+to the amount of time it takes to recover orbital  
+resonance, then the Sun could be moved without 
+disrupting the planets. But if you try to move  
+the Sun too quickly then yeah, you could break the 
+solar system. Fortunatley, the proposed methods do  
+move the Sun very slowly—and I believe that’s case 
+even for the relatively rapid Caplan thruster.
+While we’re on gigantic spacecraft, let’s move on 
+to our episode on detecting gigantic spacecraft  
+from the gravitational radiation they emit 
+when accelerating. brothermine2292 points out  
+that RAMAcraft aren't the only linear accelerators 
+that would emit detectable gravitational waves. So  
+would the very rare head-on collision between two 
+black holes. That’s right, and we did very briefly  
+mention natural causes in the video. A head-on 
+collision between any compact body - black hole,  
+neutron star, perhaps even white dwarfs, 
+would causes both objects to massively  
+decelerate in a straight line resulting in linear 
+gravitational waves that could be detectable.  
+For the black hole there should be a 
+very weird but modellable gravitational  
+wave ring-down as the two fell together 
+again. For non-black holes there should  
+be a really clear electromagnetic signature. 
+So hopefully we can distinguish these cases.
+And then there’s the episode where we talked 
+about the prospects of Betelguese going supernova,  
+and when the next nearby supernova 
+might be, and what it might do to us.  
+ETLee-db6cn points out that a portion of the 
+Earth will generally be completely shadowed  
+from a supernova, depending on its location in the 
+sky. So while it’s true that being on the other  
+side of the planet would shield you from the worst 
+of the actual radiation from the supernova blast,  
+for most death-by-supernova scenarios 
+it’s not direct irradiation that gets you.  
+The most likely killer is due to the ozone layer 
+being depleted. Even if that happens only on one  
+side of the planet, the effect quickly 
+becomes global with atmospheric mixing.  
+There’s also the fringe case when a supernova goes 
+off while you’re in a region of the galaxy with  
+relatively high gas abundance, which will then 
+irradiate the entire planet from all direction  
+with X-rays for a long time. But yeah, maybe if 
+you have a well-stocked bunker and happen to be  
+antipodal to a very nearby supernova, you get to 
+emerge years later to enjoy the post-apocalypse.  
+And by that time I might have caught up on all the 
+missed comment responses, so double win really.

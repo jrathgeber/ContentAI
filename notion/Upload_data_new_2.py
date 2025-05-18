@@ -10,7 +10,7 @@ config.read('C:\\etc\\properties.ini')
 token = config['notion']['token']
 
 NOTION_TOKEN = token
-DATABASE_ID = "1ebe46d2882f807d966cfbc286fe31d1"
+DEFAULT_DATABASE_ID = "XX"
 
 headers = {
     "Authorization": f"Bearer {NOTION_TOKEN}",
@@ -20,6 +20,19 @@ headers = {
 
 
 def upload_to_notion(title, author, content, tags):
+
+    DATABASE_ID = DEFAULT_DATABASE_ID
+
+    print("Author ::" + author)
+
+    if "Astronomy" in str(author):
+        DATABASE_ID = '1f7e46d2882f801392ddc8b9d9653546'
+
+    if "Crypto" in str(author):
+        DATABASE_ID = 'f7e46d2882f801392ddc8b9d9653546'
+
+    if "Manifest" in str(author):
+        DATABASE_ID = '1ebe46d2882f807d966cfbc286fe31d1'
 
     url = f"https://api.notion.com/v1/pages"
 
