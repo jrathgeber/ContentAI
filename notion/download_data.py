@@ -87,7 +87,7 @@ def fetch_all_database_items(notion_client, database_id):
     return all_items
 
 
-def main():
+def get_great_content_from_notion(category):
 
     if not NOTION_API_KEY or not NOTION_DATABASE_ID:
         print("Error: NOTION_API_KEY or NOTION_DATABASE_ID not set.")
@@ -127,5 +127,6 @@ def main():
 
     return random_item.get('tweet', 'nothing')
 
+
 if __name__ == "__main__":
-    main()
+    get_great_content_from_notion("astronomy")
