@@ -4,6 +4,7 @@ import schedule
 
 import notion.download_data as nt
 import emailxx.yahoo_quick_email as yahoo
+from twitter.tweet import tweetSomething
 
 
 def good_morning():
@@ -15,6 +16,7 @@ def good_morning():
     print("Tweeting :: " + tweet)
     yahoo.send_quick_message('ContentAI is Live!', tweet)
 
+    tweetSomething("GM X. " + tweet)
 
 def midday_motivation():
 
@@ -24,6 +26,7 @@ def midday_motivation():
     tweet = nt.get_great_content_from_notion("Manifest")
     print("Tweeting :: " + tweet)
     yahoo.send_quick_message('ContentAI is Live!', tweet)
+
 
 def good_night():
 
