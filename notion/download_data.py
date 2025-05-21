@@ -89,6 +89,12 @@ def fetch_all_database_items(notion_client, database_id):
 
 def get_great_content_from_notion(category):
 
+    if category == 'Astronomy':
+        NOTION_DATABASE_ID = "1f7e46d2882f801392ddc8b9d9653546"
+
+    if category == 'Manifest':
+        NOTION_DATABASE_ID = "1ebe46d2882f807d966cfbc286fe31d1"
+
     if not NOTION_API_KEY or not NOTION_DATABASE_ID:
         print("Error: NOTION_API_KEY or NOTION_DATABASE_ID not set.")
         print("Please set them as environment variables or in the script.")

@@ -37,7 +37,7 @@ def copy_write(copy, article_number, slug, key_words, todaydate):
 def add_blog(blog_path, article_number, slug, key_words, today_date):
 
     f = open(blog_path + "\\blog.html", "r")
-    copy = open("blog.html", "w")
+    copy = open("zTemp\\blog\\blog.html", "w")
     
     for line in f:
 
@@ -46,18 +46,16 @@ def add_blog(blog_path, article_number, slug, key_words, today_date):
         if '<div id="posts" class="row popup-container">' in line:
             copy_write(copy, article_number, slug, key_words, today_date)
 
-
     f.close()
     copy.close()
 
-    copyfile('blog.html',  blog_path + "\\blog.html")
+    copyfile('zTemp\\blog\\blog.html',  blog_path + "\\blog.html")
 
     # Give it some time
     time.sleep(3)
 
 
 def replace_blog(blog_path, article_number, slug, key_words, today_date):
-
 
     f = open(blog_path + "\\blog.html", "r")
     copy = open("zappy\\blog.html", "w")
