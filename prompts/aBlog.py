@@ -122,8 +122,64 @@ def get_prompt(key_words):
     Add Personal Touches: Incorporate anecdotes or casual language to make the writing feel more personal.
     Avoid Repetition: Be mindful of overusing certain terms or phrases, as this can signal AI authorship.
     Use Active Voice: Write in an active voice to make sentences more direct and engaging.
+           
     
     Please add this statement to the html head section after the title :   <link rel="stylesheet" href="./medium.css" type="text/css" />
+    
+    Please don't use this symbol � in place of apostrophe when writing. 
+    
+    The following css is for python code formatting. Make sure 
+    
+    
+    /* Code block container */
+    pre {
+        background-color: #1e1e1e;
+        border-radius: 6px;
+        padding: 1rem;
+        margin: 1.5rem 0;
+        overflow-x: auto;
+    }
+    
+    /* Code inside the pre block */
+    pre code {
+        color: #d4d4d4;
+        font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    /* Syntax highlighting colors */
+    .keyword {
+        color: #569cd6;  /* blue for keywords */
+    }
+    
+    .string {
+        color: #ce9178;  /* orange for strings */
+    }
+    
+    .comment {
+        color: #6a9955;  /* green for comments */
+    }
+    
+    .function {
+        color: #dcdcaa;  /* yellow for functions */
+    }
+    
+    .variable {
+        color: #9cdcfe;  /* light blue for variables */
+    }
+    
+    .number {
+        color: #b5cea8;  /* light green for numbers */
+    }
+    
+    /* Add some subtle styling for better visibility */
+    pre {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        border: 1px solid #333;
+    }
+    
+    
     
     """
 
