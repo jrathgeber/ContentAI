@@ -1,28 +1,5 @@
-import configparser
-from datetime import date
-
 import ai.Dalle as ai
 import requests
-import os
-from PIL import Image
-
-
-def write(key_words):
-
-    # Get today's Date
-    today = date.today()
-    formatted_date = today.strftime("%b %d, %Y")
-    print("Processing " + formatted_date)
-
-    # Get Reference to Properties
-    config = configparser.ConfigParser()
-    config.read('C:\\etc\\properties.ini')
-
-    slug = key_words.replace(" ", "_")
-
-    file_path_image = "c:\\\\dep\\ContentAI\\images\\"
-
-    new_image(file_path_image, slug, key_words, formatted_date)
 
 
 def download_image(url, file_name):
@@ -35,17 +12,25 @@ def download_image(url, file_name):
         print("Failed to retrieve the image")
 
 
-def new_image(file_path_laptop_image, slug, key_words, ddate):
+def new_image(key_words):
 
-    file_name = file_path_laptop_image + slug + '.jpg'
+    key_words = key_words.lstrip()
 
-    image_url = ai.create_image(file_path_laptop_image, 23,  slug, key_words, ddate)
+    slug = key_words.replace(" ", "_")
 
-    download_image(image_url, slug + '.jpg')
+    file_name = slug + '.jpg'
+
+    image_url = ai.create_image_v2(key_words)
+
+    file_image_path = "C:\\dep\\ContentAI\\zTemp\\images\\" + file_name
+
+    download_image(image_url, file_image_path)
+
+    return file_name
 
 
 if __name__ == '__main__':
     try:
-        write("Stary Night")
+        file_path = new_image("Memorial Day USA people having a BBQ")
     except KeyboardInterrupt:
-        print ('\nGoodbye!')
+        print (file_path)

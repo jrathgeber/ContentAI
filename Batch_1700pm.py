@@ -8,6 +8,8 @@ import notion.get_post as notn
 import notion.Upload_data_new_2 as notdb
 import twitter.gen_tweets as tw
 import twitter.tweet
+import twitter.post_img
+import twitter.tweet_image_v2
 import web.get_amazon_product
 import web.get_rockbros_product_gemini
 import web.get_web_article
@@ -124,6 +126,14 @@ for key, value in daily_dict.items():
         twitter.tweet.tweetSomething(value)
         tw_tweet = value
         print("Tweeting ::: " + value)
+
+    if str(key).startswith("Image") and str(value) != "    " and twitter_flag:
+        img = twitter.post_img.new_image(value)
+
+        twitter.tweet_image_v2.post_image_tweet(img, value.lstrip())
+        tw_tweet = value
+        print("Tweeting ::: " + value)
+
 
     if str(key).startswith("YouTube Upload") and str(value) != "    " and youtube_flag:
 

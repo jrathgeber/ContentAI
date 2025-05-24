@@ -25,7 +25,7 @@ def upload_media(image_path):
     """
     url = "https://upload.twitter.com/1.1/media/upload.json"
 
-    with open(image_path, 'rb') as image_file:
+    with open("C:\\dep\\ContentAI\\zTemp\\images\\" + image_path, 'rb') as image_file:
         files = {'media': image_file}
         response = requests.post(url, auth=auth, files=files)
 
