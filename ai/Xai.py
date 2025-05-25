@@ -1,5 +1,6 @@
 from openai import OpenAI
 import configparser
+import json
 
 # Get Reference to Properties
 config = configparser.ConfigParser()
@@ -19,9 +20,9 @@ def ask_grok_something(model_name, prompt):
         model=model_name,
 
         messages=[
-           {"role": "system", "content": "Be precise and concise."},
-            {"role": "user", "content": prompt}
-        ]
+           {"role": "system", "content": "State today's date at beginning and echo the prompt question. Provide X citations only. Focus on happy and good news not wars and conflicts."},
+           {"role": "user", "content": prompt}
+        ],
     )
 
     return response.choices[0].message.content
@@ -29,8 +30,8 @@ def ask_grok_something(model_name, prompt):
 
 if __name__ == "__main__":
 
-    model_name = "grok-2-latest"
-    prompt = "What type of AI are you and what is your model ? "
+    model_name = "grok-3-latest"
+    prompt = "What is happening in the world today?  Avoid wars and conflicts. Any good happy news ?  "
 
     answer = ask_grok_something(model_name, prompt)
 

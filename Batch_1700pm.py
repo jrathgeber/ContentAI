@@ -1,5 +1,6 @@
 import re
 import ai.ClaudeCode
+import ai.XaiLive
 import blog.write_blog
 import mediun.create_article
 import mediun.write_article
@@ -133,6 +134,15 @@ for key, value in daily_dict.items():
         twitter.tweet_image_v2.post_image_tweet(img, value.lstrip())
         tw_tweet = value
         print("Tweeting ::: " + value)
+
+    if str(key).startswith("Xai") and str(value) != "    " and twitter_flag:
+
+        text = ai.XaiLive.ask_live_grok_something(value)
+        twitter.tweet.tweetSomething(text)
+        tw_tweet = value
+
+        print("Tweeting ::: " + value)
+
 
 
     if str(key).startswith("YouTube Upload") and str(value) != "    " and youtube_flag:
