@@ -17,7 +17,7 @@ def ask_live_grok_something(prompt):
         "messages": [
             {
                 "role": "system",
-                "content": "State today's date at beginning. Provide a few X citations only. Focus on happy and good news not wars and conflicts.",
+                "content": "State today's date at beginning. Provide a few X citations only. Be very concise. ",
 
                 "role": "user",
                 "content": prompt
@@ -39,7 +39,7 @@ def ask_live_grok_something(prompt):
 
 if __name__ == "__main__":
 
-    prompt = "What is trending on X today? How are the recent system issues?  "
+    prompt = "How is the weather looking for Memorial Day 2025 ? US Northeast only. Is it a good day for a BBQ? "
 
     answer = ask_live_grok_something(prompt)
 

@@ -20,7 +20,7 @@ def new_image(key_words):
 
     file_name = slug + '.jpg'
 
-    image_url = ai.create_image_v2(key_words)
+    image_url = ai.create_image(key_words)
 
     file_image_path = "C:\\dep\\ContentAI\\zTemp\\images\\" + file_name
 
