@@ -23,6 +23,7 @@ def new_image(key_words):
     image_url = ai.create_image(key_words)
 
     file_image_path = "C:\\dep\\ContentAI\\zTemp\\images\\" + file_name
+    file_image_path = "C:\\Users\\jrath\\PycharmProjects\\ContentAI\\zTemp\\images\\" + file_name
 
     download_image(image_url, file_image_path)
 
@@ -31,6 +32,6 @@ def new_image(key_words):
 
 if __name__ == '__main__':
     try:
-        file_path = new_image("Memorial Day USA people having a BBQ")
+        file_path = new_image("New York Knicks")
     except KeyboardInterrupt:
         print (file_path)

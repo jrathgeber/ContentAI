@@ -18,6 +18,8 @@ bearer_token = config['twitter']['bearer_token']
 # OAuth1 authentication
 auth = OAuth1(API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
+
+
 def upload_media(image_path):
     """
     Upload media to Twitter and return media_id
@@ -25,7 +27,9 @@ def upload_media(image_path):
     """
     url = "https://upload.twitter.com/1.1/media/upload.json"
 
-    with open("C:\\dep\\ContentAI\\zTemp\\images\\" + image_path, 'rb') as image_file:
+    temp_path = str(config['blog']['blog_temp'])
+
+    with open(temp_path + "images\\" + image_path, 'rb') as image_file:
         files = {'media': image_file}
         response = requests.post(url, auth=auth, files=files)
 
