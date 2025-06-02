@@ -25,13 +25,13 @@ def upload_to_notion(title, author, content, tags):
 
     print("Author ::" + author)
 
-    if "Astronomy" in str(author):
+    if "Astronomy" in tags:
         DATABASE_ID = '1f7e46d2882f801392ddc8b9d9653546'
 
-    if "Crypto" in str(author):
+    if "Crypto" in tags:
         DATABASE_ID = 'f7e46d2882f801392ddc8b9d9653546'
 
-    if "Manifest" in str(author):
+    if "Manifest" in tags:
         DATABASE_ID = '1ebe46d2882f807d966cfbc286fe31d1'
 
     url = f"https://api.notion.com/v1/pages"

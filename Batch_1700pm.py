@@ -170,7 +170,8 @@ for key, value in daily_dict.items():
 
     if str(key).startswith("YouTube Transcript") and str(value) != "    " and youtube_download_flag:
 
-        yt_catagory = 'General'
+        yt_author = 'Nero New'
+        yt_category = 'Manifest'
 
         print("Author ::: " + value.partition(":")[0])
 
@@ -190,7 +191,7 @@ for key, value in daily_dict.items():
             if match:
                 number_part = match.group(1)
                 text_part = match.group(2).strip('.').lstrip()
-                notdb.upload_to_notion(number_part, yt_catagory, text_part, ['YouTube', 'Manifest'])
+                notdb.upload_to_notion(number_part, yt_author, text_part, ['YouTube', yt_category])
 
 if medium_flag and medium_set:
 

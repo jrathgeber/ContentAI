@@ -48,7 +48,7 @@ def get_tweets( trancript):
     # O1_MODEL = 'o3-mini'
 
     prepend = ""
-    instructions = "Find 10 good tweets from the following text :  "
+    instructions = "Find 5 great tweets about self improvement and manifesting from the following text :  "
 
     prompt = instructions + " : " + trancript
 
