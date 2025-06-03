@@ -9,7 +9,7 @@ def new_image(key_words):
 
     # set some vars
     key_words = key_words.lstrip()
-    slug = key_words.replace(" ", "_")
+    slug = key_words.replace(" ", "_").replace(",", "_").replace("#", "_").replace("?", "_").replace("🚀", "_").replace('"', "_")
     file_name = slug + '.jpg'
 
     # new API returns the bytes

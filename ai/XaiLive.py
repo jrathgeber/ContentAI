@@ -39,7 +39,7 @@ def ask_live_grok_something(prompt):
 
 if __name__ == "__main__":
 
-    prompt = "How is the weather looking for Memorial Day 2025 ? US Northeast only. Is it a good day for a BBQ? "
+    prompt = "What happened in the stock market yesterday in one line ?"
 
     answer = ask_live_grok_something(prompt)
 

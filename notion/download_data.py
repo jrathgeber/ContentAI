@@ -135,4 +135,4 @@ def get_great_content_from_notion(category):
 
 
 if __name__ == "__main__":
-    get_great_content_from_notion("astronomy")
+    get_great_content_from_notion("Astronomy")

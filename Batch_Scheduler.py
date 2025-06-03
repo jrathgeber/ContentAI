@@ -7,6 +7,7 @@ import twitter.tweet
 import twitter.tweet_image_v2
 import twitter.post_img_openai
 
+
 def good_morning():
 
     current_time = datetime.datetime.now().strftime("%H:%M:%S")
@@ -17,6 +18,7 @@ def good_morning():
     yahoo.send_quick_message('ContentAI is Live!', tweet)
 
     tweet.tweetSomething("GM X hustlers. Today remember :  " + tweet)
+
 
 def midday_motivation():
 
@@ -36,7 +38,7 @@ def good_night():
     fact = nt.get_great_content_from_notion("Astronomy")
     img = twitter.post_img_openai.new_image(fact)
 
-    tweet = "Good night X. Something to think about as you drift off : " + fact
+    tweet = "Good night X : Something to think about to help you drift off : " + fact
 
     twitter.tweet_image_v2.post_image_tweet(img, tweet.lstrip())
 
@@ -47,7 +49,7 @@ def good_night():
 # Schedule the stuff
 schedule.every().day.at("08:00").do(good_morning)
 schedule.every().day.at("12:00").do(midday_motivation)
-schedule.every().day.at("22:00").do(good_night)
+schedule.every().day.at("22:15").do(good_night)
 
 print("Scheduler started. Waiting for scheduled times...")
 print("Scheduled times: 8:00 AM, 12:00 PM, and 8:00 PM")
