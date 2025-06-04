@@ -17,7 +17,7 @@ def good_morning():
     print("Tweeting :: " + tweet)
     yahoo.send_quick_message('ContentAI is Live!', tweet)
 
-    tweet.tweetSomething("GM X hustlers. Today remember :  " + tweet)
+    twitter.tweet.tweetSomething("GM X. Today remember :  " + tweet)
 
 
 def midday_motivation():
