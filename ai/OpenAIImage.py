@@ -16,7 +16,8 @@ def get_openai_image_bytes(prompt):
 
     result = client.images.generate(
         model="gpt-image-1",
-        prompt=prompt
+        prompt=prompt,
+        size="1536x1024"
     )
 
     image_base64 = result.data[0].b64_json
@@ -28,7 +29,7 @@ def get_openai_image_bytes(prompt):
 if __name__ == "__main__":
 
     test = """
-        Bryant Park in New York
+        The andromeda galaxy
         """
 
     image_bytes = get_openai_image_bytes(test)
