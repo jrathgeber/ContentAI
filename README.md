@@ -18,7 +18,7 @@
 
 and
 
-<img src="zTemp/images/notion_icon.webp" width="30%" style="position: relative; top: 0; right: 0;" alt="Notion"/>
+<img src="zTemp/images/Notion_icon.webp" width="30%" style="position: relative; top: 0; right: 0;" alt="Notion"/>
 
 </div>
 <br>
