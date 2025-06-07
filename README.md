@@ -784,7 +784,7 @@ ContentAI is more than just a tool; it's a partner in your digital journey. By a
 
 1) Make a notion page in your workspace with todays date as the name.
 
-<img src="zTemp/images/notion_sample.png" width="70%" style="position: relative; top: 0; right: 0;" alt="Notion"/>
+<img src="zTemp/images/Notion_Sample.png" width="70%" style="position: relative; top: 0; right: 0;" alt="Notion"/>
 
 2) Add all required api keys to properties_template.ini.
 
