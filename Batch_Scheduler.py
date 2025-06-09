@@ -25,10 +25,12 @@ def midday_motivation():
     current_time = datetime.datetime.now().strftime("%H:%M:%S")
     print(f"Current time: {current_time}")
 
-    tweet = nt.get_great_content_from_notion("Manifest")
+    empty_tweet = nt.get_great_content_from_notion("Snack Link")
+    tweet = "It is lunch time. I am snacking on https://www.trifindr.com/product/biena_chickpea_snacks_/"
+
     print("Tweeting :: " + tweet)
     yahoo.send_quick_message('ContentAI is Live!', tweet)
-
+    twitter.tweet.tweetSomething("GM X. Today remember :  " + tweet)
 
 def good_night():
 
