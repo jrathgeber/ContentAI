@@ -48,7 +48,7 @@ def get_tweets( trancript):
     # O1_MODEL = 'o3-mini'
 
     prepend = ""
-    instructions = "Find 5 great tweets about self improvement and manifesting from the following text :  "
+    instructions = "Find 5 great tweets about self improvement and manifesting from the following text. Don't use emogis. Dont use exclamation marks. Just one hashtag max.   "
 
     prompt = instructions + " : " + trancript
 

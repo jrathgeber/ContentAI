@@ -1,8 +1,6 @@
 import os
 import random
 from notion_client import Client
-
-
 import configparser
 
 config = configparser.ConfigParser()
@@ -89,11 +87,19 @@ def fetch_all_database_items(notion_client, database_id):
 
 def get_great_content_from_notion(category):
 
+    NOTION_DATABASE_ID = "1ebe46d2882f807d966cfbc286fe31d1"
+
+    if category == 'Affiliates':
+        NOTION_DATABASE_ID = "20de46d2882f80ae99dfecad4a06e9cb"
+
     if category == 'Astronomy':
         NOTION_DATABASE_ID = "1f7e46d2882f801392ddc8b9d9653546"
 
     if category == 'Manifest':
         NOTION_DATABASE_ID = "1ebe46d2882f807d966cfbc286fe31d1"
+
+    if category == 'Work':
+        NOTION_DATABASE_ID = "20de46d2882f804abee6f6f49d409aef"
 
     if not NOTION_API_KEY or not NOTION_DATABASE_ID:
         print("Error: NOTION_API_KEY or NOTION_DATABASE_ID not set.")
