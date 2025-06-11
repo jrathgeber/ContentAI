@@ -92,9 +92,10 @@ def get_video_transcript(video_url_or_id):
 # For debugging, you can also do:
 if __name__ == "__main__":
     # Test with a video URL or ID
-    test_video = "gZWKqH0Wchw"
+    test_video = "73_PDzqByIY"
     result = get_video_transcript(test_video)
     if result:
         print("Transcript preview:", result[:200] + "...")
     else:
         print("No transcript available")
+
