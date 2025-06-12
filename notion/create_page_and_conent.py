@@ -1,7 +1,6 @@
 import requests
 import json
-import os
-
+from datetime import date
 import configparser
 
 config = configparser.ConfigParser()
@@ -9,6 +8,11 @@ config.read('C:\\etc\\properties.ini')
 
 NOTION_API_KEY=config['notion']['token']
 NOTION_DATABASE_ID = "1a1e46d2882f806e840af4bb89a23475"
+
+# Get today's Date
+today = date.today()
+formatted_date = today.strftime("%Y%m%d")
+print("Processing " + formatted_date)
 
 
 def create_notion_page(parent_page_id, title, content=None):
@@ -78,12 +82,12 @@ def create_notion_page(parent_page_id, title, content=None):
     return response.json()
 
 
-def main():
+def main(parent):
 
     # Example usage
     # You'll need to replace these values with your actual Notion page IDs
-    parent_id = NOTION_DATABASE_ID
-    page_title = "20250520"
+    parent_id = parent
+    page_title = formatted_date
     page_content = "We will  get rich"
 
     # Create the page
@@ -100,4 +104,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+
+    parent = "205e46d2882f80fc83c8f96ddd628db3"
+
+    main(parent)
