@@ -32,6 +32,7 @@ def midday_motivation():
     yahoo.send_quick_message('ContentAI is Live!', tweet)
     twitter.tweet.tweetSomething("GM X. Today remember :  " + tweet)
 
+
 def good_night():
 
     current_time = datetime.datetime.now().strftime("%H:%M:%S")
@@ -47,11 +48,19 @@ def good_night():
     print("Tweeting :: " + tweet)
     yahoo.send_quick_message('ContentAI is going to bed!', tweet)
 
+    # exit
+    exit_script()
+
+
+def exit_script():
+    print("Exiting the script")
+    exit()
 
 # Schedule the stuff
 schedule.every().day.at("08:00").do(good_morning)
 schedule.every().day.at("12:00").do(midday_motivation)
 schedule.every().day.at("22:15").do(good_night)
+
 
 print("Scheduler started. Waiting for scheduled times...")
 print("Scheduled times: 8:00 AM, 12:00 PM, and 8:00 PM")
