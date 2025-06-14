@@ -6,7 +6,15 @@ import emailxx.yahoo_quick_email as yahoo
 import twitter.tweet
 import twitter.tweet_image_v2
 import twitter.post_img_openai
+import notion.create_page_and_conent
 
+
+def get_up():
+
+    current_time = datetime.datetime.now().strftime("%H:%M:%S")
+    print(f"Current time: {current_time}")
+
+    notion.create_page_and_conent.setup_notion_page("205e46d2882f80fc83c8f96ddd628db3")
 
 def good_morning():
 
@@ -56,7 +64,10 @@ def exit_script():
     print("Exiting the script")
     exit()
 
+get_up()
+
 # Schedule the stuff
+# schedule.every().day.at("07:00").do(get_up)
 schedule.every().day.at("08:00").do(good_morning)
 schedule.every().day.at("12:00").do(midday_motivation)
 schedule.every().day.at("22:15").do(good_night)

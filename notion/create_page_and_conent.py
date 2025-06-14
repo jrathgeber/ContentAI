@@ -3,6 +3,7 @@ import json
 from datetime import date
 import configparser
 
+
 config = configparser.ConfigParser()
 config.read('C:\\etc\\properties.ini')
 
@@ -82,7 +83,7 @@ def create_notion_page(parent_page_id, title, content=None):
     return response.json()
 
 
-def main(parent):
+def setup_notion_page(parent):
 
     # Example usage
     # You'll need to replace these values with your actual Notion page IDs
@@ -107,4 +108,4 @@ if __name__ == "__main__":
 
     parent = "205e46d2882f80fc83c8f96ddd628db3"
 
-    main(parent)
+    setup_notion_page(parent)
