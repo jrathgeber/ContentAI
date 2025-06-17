@@ -16,6 +16,7 @@ def get_up():
 
     notion.create_page_and_conent.setup_notion_page("205e46d2882f80fc83c8f96ddd628db3")
 
+
 def good_morning():
 
     current_time = datetime.datetime.now().strftime("%H:%M:%S")
@@ -25,7 +26,7 @@ def good_morning():
     print("Tweeting :: " + tweet)
     yahoo.send_quick_message('ContentAI is Live!', tweet)
 
-    twitter.tweet.tweetSomething("GM X. Today remember :  " + tweet)
+    twitter.tweet.tweetSomething(tweet)
 
 
 def midday_motivation():
@@ -34,11 +35,11 @@ def midday_motivation():
     print(f"Current time: {current_time}")
 
     empty_tweet = nt.get_great_content_from_notion("Snack Link")
-    tweet = "It is lunch time. I am snacking on https://www.trifindr.com/product/biena_chickpea_snacks_/"
+    tweet = "https://www.trifindr.com/product/honey-stinger-organic-fruit-smoothie-energy-chew/"
 
     print("Tweeting :: " + tweet)
-    yahoo.send_quick_message('ContentAI is Live!', tweet)
-    twitter.tweet.tweetSomething("GM X. Today remember :  " + tweet)
+    yahoo.send_quick_message('Lunchtime snack pump', tweet)
+    twitter.tweet.tweetSomething("Lunch time. I am snacking on :  " + tweet)
 
 
 def good_night():
