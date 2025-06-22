@@ -70,7 +70,7 @@ def exit_script():
 # Schedule the stuff
 schedule.every().day.at("07:00").do(get_up)
 schedule.every().day.at("08:00").do(good_morning)
-schedule.every().day.at("12:00").do(midday_motivation)
+#schedule.every().day.at("12:00").do(midday_motivation)
 schedule.every().day.at("22:15").do(good_night)
 
 
