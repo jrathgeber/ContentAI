@@ -106,6 +106,6 @@ def setup_notion_page(parent):
 
 if __name__ == "__main__":
 
-    parent = "205e46d2882f80fc83c8f96ddd628db3"
+    parent = "223e46d2882f80569965c2672897c878"
 
     setup_notion_page(parent)

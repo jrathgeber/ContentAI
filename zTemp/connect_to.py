@@ -1,36 +1,30 @@
-import requests
-import json
+import os
+from notion_client import Client
 
-API_KEY = "your_api_key_here"
-BASE_URL = "https://api.bluewave.com/v1"
+notion = Client(auth=os.environ["NOTION_API_KEY"])
 
-def make_phone_call(from_number, to_number, message):
-    headers = {
-        "Authorization": f"Bearer {API_KEY}",
-        "Content-Type": "application/json"
-    }
+def duplicate_page(page_id):
+    original_page = notion.pages.retrieve(page_id)
     
-    payload = {
-        "from": from_number,
-        "to": to_number,
-        "text": message
-    }
+    new_page = notion.pages.create(
+        parent={"database_id": original_page["parent"]["database_id"]},
+        properties=original_page["properties"]
+    )
     
-    response = requests.post(f"{BASE_URL}/calls", headers=headers, data=json.dumps(payload))
+    original_blocks = notion.blocks.children.list(page_id)
+    for block in original_blocks["results"]:
+        notion.blocks.children.append(
+            block_id=new_page["id"],
+            children=[{
+                "object": "block",
+                "type": block["type"],
+                **block[block["type"]]
+            }]
+        )
     
-    if response.status_code == 200:
-        call_data = response.json()
-        return call_data["call_id"]
-    else:
-        raise Exception(f"Failed to make call: {response.status_code} - {response.text}")
+    return new_page["id"]
 
 if __name__ == "__main__":
-    from_number = "+1234567890"
-    to_number = "+9876543210"
-    message = "Hello, this is a test call from Bluewave API."
-    
-    try:
-        call_id = make_phone_call(from_number, to_number, message)
-        print(f"Call initiated successfully. Call ID: {call_id}")
-    except Exception as e:
-        print(f"Error: {str(e)}")
+    original_page_id = "your-page-id-here"
+    new_page_id = duplicate_page(original_page_id)
+    print(f"New page created with ID: {new_page_id}")

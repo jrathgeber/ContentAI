@@ -14,7 +14,7 @@ def get_up():
     current_time = datetime.datetime.now().strftime("%H:%M:%S")
     print(f"Current time: {current_time}")
 
-    notion.create_page_and_conent.setup_notion_page("205e46d2882f80fc83c8f96ddd628db3")
+    notion.create_page_and_conent.setup_notion_page("223e46d2882f80569965c2672897c878")
 
 
 def good_morning():
