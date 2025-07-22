@@ -150,7 +150,7 @@ def test_alternative_methods(video_id):
 # Usage examples:
 if __name__ == "__main__":
     # Test with the problematic video
-    test_video = "_YvPRuA0_wk"
+    test_video = "DrkqMDOD-jQ&t"
 
     print("=== Testing transcript fetch ===")
     result = get_video_transcript(test_video)

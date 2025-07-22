@@ -53,6 +53,27 @@ def get_product(target_url):
 
     specs_str = str(o["specs"])
 
+    o["description"] ="""    When
+    local
+    politics
+    halts
+    the
+    important
+    excavation
+    of
+    an
+    ancient
+    Roman
+    villa, a
+    tenacious
+    archeologist
+    travels
+    to
+    London
+    for a funeral, and uncovers a web of international crime and violence.As mysterious deaths begin to pile up, Alice Carta joins efforts with a tough female Chief Inspector from Scotland Yard, and a suspicious investigator with his own agenda for solving the murders.The closer the unlikely team gets to identifying the perpetrator, the more bizarre the efforts to stop them become, forcing an uncomfortable interdependence among the three sleuths.
+
+"""
+
     print(l)
 
     # result
