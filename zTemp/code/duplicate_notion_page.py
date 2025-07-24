@@ -1,7 +1,17 @@
 import os
 from notion_client import Client
 
-notion = Client(auth=os.environ["NOTION_API_KEY"])
+from notion_client import Client
+from datetime import date
+import configparser
+
+config = configparser.ConfigParser()
+config.read('C:\\etc\\properties.ini')
+
+NOTION_API_KEY=config['notion']['token']
+NOTION_PAGE_ID = "237e46d2882f80a8a3a0ec88704600fe"
+
+notion = Client("NOTION_API_KEY")
 
 def duplicate_page(page_id):
     original_page = notion.pages.retrieve(page_id)

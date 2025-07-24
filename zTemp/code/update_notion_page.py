@@ -1,7 +1,21 @@
 import os
 from notion_client import Client
+from datetime import date
+import configparser
 
-notion = Client(auth=os.environ["NOTION_TOKEN"])
+
+config = configparser.ConfigParser()
+config.read('C:\\etc\\properties.ini')
+
+NOTION_API_KEY=config['notion']['token']
+NOTION_PAGE_ID = "237e46d2882f80a8a3a0ec88704600fe"
+
+# Get today's Date
+today = date.today()
+formatted_date = today.strftime("%Y%m%d")
+print("Processing " + formatted_date)
+
+notion = Client(NOTION_API_KEY)
 
 def update_page(page_id, new_content):
     notion.pages.update(
@@ -21,7 +35,7 @@ def publish_page(page_id):
     )
 
 def main():
-    page_id = "your_page_id_here"
+    page_id = NOTION_PAGE_ID
     new_content = {
         "title": "Updated Page Title",
         "content": "This is the updated content of the page."
